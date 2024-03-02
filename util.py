@@ -54,20 +54,35 @@ def retrieve_player_statsAce(player_name, player_id):
     print(f"Nombre de matchs trouvés : {len(elem)}")
 
     id_matches = []
+    number_aces_player = []
+    number_aces_opponent = []
     for element in elem:
         id_matches.append(element.get_attribute("id")[4:])
 
     for id in id_matches:
-        if id==id_matches[0]:
-            print("on passe")
-        else:
-            driver.get(f"https://www.flashscore.fr/match/{id}/#/resume-du-match/statistiques-du-match/0")
-            sleep(2)
-            element_data_test_id = driver.find_elements(By.TAG_NAME, 'strong')
-            print(f"Nombre d'éléments : {len(element_data_test_id)}")
-            for strong_element in element_data_test_id:
-                if strong_element.text == "Aces":
-                    print(strong_element)
+        driver.get(f"https://www.flashscore.fr/match/{id}/#/resume-du-match/statistiques-du-match/0")
+        sleep(3)
+
+        element_data_test_id = driver.find_elements(By.TAG_NAME, 'strong')
+
+        away_home_participant = driver.find_elements(By.CLASS_NAME, "participant__participantLink")
+
+        is_player_home = False
+
+        if away_home_participant[0].get_attribute('href') == url:
+            is_player_home = True
+
+        for i in range(len(element_data_test_id)):
+            if element_data_test_id[i].text == "Aces":
+                if is_player_home:
+                    number_aces_player.append(element_data_test_id[i - 1].text)
+                    number_aces_opponent.append(element_data_test_id[i + 1].text)
+                else:
+                    number_aces_player.append(element_data_test_id[i + 1].text)
+                    number_aces_opponent.append(element_data_test_id[i - 1].text)
+
+    print(number_aces_player)
+    print(number_aces_opponent)
 
     driver.close()
 
