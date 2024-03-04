@@ -75,15 +75,32 @@ def retrieve_player_statsAce(player_name, player_id):
         for i in range(len(element_data_test_id)):
             if element_data_test_id[i].text == "Aces":
                 if is_player_home:
-                    number_aces_player.append(element_data_test_id[i - 1].text)
-                    number_aces_opponent.append(element_data_test_id[i + 1].text)
+                    number_aces_player.append(int(element_data_test_id[i - 1].text))
+                    number_aces_opponent.append(int(element_data_test_id[i + 1].text))
                 else:
-                    number_aces_player.append(element_data_test_id[i + 1].text)
-                    number_aces_opponent.append(element_data_test_id[i - 1].text)
+                    number_aces_player.append(int(element_data_test_id[i + 1].text))
+                    number_aces_opponent.append(int(element_data_test_id[i - 1].text))
 
     print(number_aces_player)
     print(number_aces_opponent)
 
     driver.close()
 
+    return [number_aces_player,number_aces_opponent]
 
+
+def build_ladder_atp_receiver():
+    file = open("./bdd_player_id_flashscore.txt", 'r')
+    ladder = {}
+    for line in file.readlines():
+        name_player = line.split('/')[2]
+        id_player = line.split('/')[3]
+        result = retrieve_player_statsAce(name_player, id_player)
+        ladder[name_player] = sum(result[1]) / len(result[1])
+        print(ladder)
+    file.close()
+    print(ladder)
+
+
+#retrieve_player_statsAce("rybakina-elena", "UDzElXdm")
+build_ladder_atp_receiver()
