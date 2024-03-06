@@ -41,11 +41,14 @@ def retrieve_player_id(first_name, last_name):
             return element.split("-")[-1]
 
 
-def retrieve_player_statsAce(player_name, player_id):
+def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     # player_name = rybakina-elena
     # player_id = UDzElXdm
 
-    driver = webdriver.Firefox()
+    if driver_arg is None:
+        driver = webdriver.Firefox()
+    else:
+        driver = driver_arg
 
     url = f"https://www.flashscore.fr/joueur/{player_name}/{player_id}/"
     driver.get(url)
@@ -99,8 +102,16 @@ def build_ladder_atp_receiver():
         ladder[name_player] = sum(result[1]) / len(result[1])
         print(ladder)
     file.close()
-    print(ladder)
 
+    sorted_ladder = dict(sorted(ladder.items(), key=lambda item: item[1]))
+    file = open("./ladder_player", 'w')
+
+    iterator = 1
+    for key,value in sorted_ladder:
+        file.write(f"{iterator}-{key}-{value}\n")
+        iterator += 1
+
+    file.close()
 
 #retrieve_player_statsAce("rybakina-elena", "UDzElXdm")
-build_ladder_atp_receiver()
+#build_ladder_atp_receiver()
