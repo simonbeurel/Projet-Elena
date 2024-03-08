@@ -50,6 +50,7 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     else:
         driver = driver_arg
 
+
     url = f"https://www.flashscore.fr/joueur/{player_name}/{player_id}/"
     driver.get(url)
 
@@ -64,7 +65,7 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
 
     for id in id_matches:
         driver.get(f"https://www.flashscore.fr/match/{id}/#/resume-du-match/statistiques-du-match/0")
-        sleep(3)
+        sleep(2)
 
         element_data_test_id = driver.find_elements(By.TAG_NAME, 'strong')
 
@@ -87,7 +88,8 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     print(number_aces_player)
     print(number_aces_opponent)
 
-    driver.close()
+    if driver_arg is None:
+        driver.close()
 
     return [number_aces_player,number_aces_opponent]
 
@@ -95,23 +97,32 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
 def build_ladder_atp_receiver():
     file = open("./bdd_player_id_flashscore.txt", 'r')
     ladder = {}
+
+    driver = webdriver.Firefox()
+
+    iterator = 1
     for line in file.readlines():
         name_player = line.split('/')[2]
         id_player = line.split('/')[3]
-        result = retrieve_player_statsAce(name_player, id_player)
+        print(f'[X] {name_player} [X]')
+        result = retrieve_player_statsAce(name_player, id_player, driver)
         ladder[name_player] = sum(result[1]) / len(result[1])
-        print(ladder)
+        iterator += 1
+        if iterator == 251: break
     file.close()
 
     sorted_ladder = dict(sorted(ladder.items(), key=lambda item: item[1]))
-    file = open("./ladder_player", 'w')
+    file = open("./ladder_player.txt", 'w')
 
     iterator = 1
-    for key,value in sorted_ladder:
+    for key,value in sorted_ladder.items():
         file.write(f"{iterator}-{key}-{value}\n")
         iterator += 1
 
     file.close()
+    driver.close()
 
-retrieve_player_statsAce("rybakina-elena", "UDzElXdm")
-#build_ladder_atp_receiver()
+    print("*** DONE ALL ***")
+
+#retrieve_player_statsAce("parry-diane", "hQQLzcNT")
+build_ladder_atp_receiver()
