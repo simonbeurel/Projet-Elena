@@ -52,3 +52,36 @@ console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1
 Read port: 46813
 console.error: ({})
 1709728925180	Marionette	INFO	Stopped listening on port 46813
+1709898444179	geckodriver	INFO	Listening on 127.0.0.1:43793
+1709898445178	webdriver::command	WARN	You are using deprecated legacy session negotiation patterns (desiredCapabilities/requiredCapabilities), see https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities#Legacy
+1709898445436	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofileEZJupj"
+MESA: error: ZINK: failed to choose pdev
+glx: failed to create drisw screen
+failed to load driver: zink
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1709898450428	Marionette	INFO	Marionette enabled
+1709898450621	Marionette	INFO	Listening on port 45061
+Read port: 45061
+console.error: ({})
+1709898474274	Marionette	INFO	Stopped listening on port 45061
+1709898483161	geckodriver	INFO	Listening on 127.0.0.1:36061
+1709898484163	webdriver::command	WARN	You are using deprecated legacy session negotiation patterns (desiredCapabilities/requiredCapabilities), see https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities#Legacy
+1709898484204	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofileVuFbAA"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1709898487150	Marionette	INFO	Marionette enabled
+1709898487231	Marionette	INFO	Listening on port 45769
+Read port: 45769
+console.error: ({})
+1709898493609	Marionette	INFO	Stopped listening on port 45769
+1709898576903	geckodriver	INFO	Listening on 127.0.0.1:55423
+1709898576910	webdriver::command	WARN	You are using deprecated legacy session negotiation patterns (desiredCapabilities/requiredCapabilities), see https://developer.mozilla.org/en-US/docs/Web/WebDriver/Capabilities#Legacy
+1709898576960	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr/bin/firefox" "--marionette" "-no-remote" "-profile" "/tmp/rust_mozprofile6FTTTB"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1709898579770	Marionette	INFO	Marionette enabled
+1709898579869	Marionette	INFO	Listening on port 41287
+Read port: 41287
+console.error: ({})
+1709898586937	Marionette	INFO	Stopped listening on port 41287

@@ -113,5 +113,5 @@ def build_ladder_atp_receiver():
 
     file.close()
 
-#retrieve_player_statsAce("rybakina-elena", "UDzElXdm")
+retrieve_player_statsAce("rybakina-elena", "UDzElXdm")
 #build_ladder_atp_receiver()
