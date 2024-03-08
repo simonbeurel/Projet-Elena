@@ -65,10 +65,11 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
 
     for id in id_matches:
         driver.get(f"https://www.flashscore.fr/match/{id}/#/resume-du-match/statistiques-du-match/0")
-        sleep(2)
+        sleep(1)
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "strong")))
+        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "participant__participantLink")))
 
         element_data_test_id = driver.find_elements(By.TAG_NAME, 'strong')
-
         away_home_participant = driver.find_elements(By.CLASS_NAME, "participant__participantLink")
 
         is_player_home = False
@@ -124,5 +125,5 @@ def build_ladder_atp_receiver():
 
     print("*** DONE ALL ***")
 
-#retrieve_player_statsAce("parry-diane", "hQQLzcNT")
-build_ladder_atp_receiver()
+retrieve_player_statsAce("parry-diane", "hQQLzcNT")
+#build_ladder_atp_receiver()
