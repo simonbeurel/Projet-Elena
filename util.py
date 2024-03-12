@@ -1,13 +1,15 @@
 '''
 The goal of this file is to define some useful functions for our DB
 '''
-from time import sleep
+from time import sleep, time
 
 from selenium import webdriver
+from selenium.common import TimeoutException
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.firefox.options import Options
 
 
 driver_path = '/usr/local/bin/chromedriver'
@@ -45,6 +47,8 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     # player_name = rybakina-elena
     # player_id = UDzElXdm
 
+    temps_debut = time()
+
     if driver_arg is None:
         driver = webdriver.Firefox()
     else:
@@ -65,9 +69,12 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
 
     for id in id_matches:
         driver.get(f"https://www.flashscore.fr/match/{id}/#/resume-du-match/statistiques-du-match/0")
-        sleep(1)
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "strong")))
-        WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLASS_NAME, "participant__participantLink")))
+        sleep(5)
+        try:
+            WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.TAG_NAME, "strong")))
+            WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, "participant__participantLink")))
+        except TimeoutException:
+            print("Match pas joué")
 
         element_data_test_id = driver.find_elements(By.TAG_NAME, 'strong')
         away_home_participant = driver.find_elements(By.CLASS_NAME, "participant__participantLink")
@@ -92,38 +99,53 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     if driver_arg is None:
         driver.close()
 
+    execution_time = time() - temps_debut
+    print(f"Temps d'exécution : {execution_time}")
+
     return [number_aces_player,number_aces_opponent]
 
 
 def build_ladder_atp_receiver():
     file = open("./bdd_player_id_flashscore.txt", 'r')
-    ladder = {}
+    ladder_receiver = {}
+    ladder_server = {}
 
-    driver = webdriver.Firefox()
+    options = Options()
+    options.add_argument("--headless")
+    driver = webdriver.Firefox(options=options)
 
     iterator = 1
     for line in file.readlines():
         name_player = line.split('/')[2]
         id_player = line.split('/')[3]
-        print(f'[X] {name_player} [X]')
+        print(f'[X] {name_player} {iterator}[X]')
         result = retrieve_player_statsAce(name_player, id_player, driver)
-        ladder[name_player] = sum(result[1]) / len(result[1])
+        ladder_receiver[name_player] = sum(result[1]) / len(result[1])
+        ladder_server[name_player] = sum(result[0]) / len(result[0])
         iterator += 1
-        if iterator == 251: break
+        if iterator == 101  : break
     file.close()
 
-    sorted_ladder = dict(sorted(ladder.items(), key=lambda item: item[1]))
-    file = open("./ladder_player.txt", 'w')
+    sorted_ladder_receiver = dict(sorted(ladder_receiver.items(), key=lambda item: item[1]))
+    sorted_ladder_server = dict(sorted(ladder_server.items(), key=lambda item: item[1]))
 
+    file = open("ladder_player_receiver.txt", 'w')
     iterator = 1
-    for key,value in sorted_ladder.items():
+    for key,value in sorted_ladder_receiver.items():
         file.write(f"{iterator}-{key}-{value}\n")
         iterator += 1
-
     file.close()
+
+    file = open("ladder_player_server.txt", 'w')
+    iterator = 1
+    for key,value in sorted_ladder_server.items():
+        file.write(f"{iterator}-{key}-{value}\n")
+        iterator += 1
+    file.close()
+
     driver.close()
 
     print("*** DONE ALL ***")
 
-retrieve_player_statsAce("parry-diane", "hQQLzcNT")
-#build_ladder_atp_receiver()
+#retrieve_player_statsAce("cirstea-sorana", "fBPsm3Iq")
+build_ladder_atp_receiver()
