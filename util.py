@@ -15,6 +15,13 @@ from selenium.webdriver.firefox.options import Options
 driver_path = '/usr/local/bin/chromedriver'
 
 
+def retrieve_player_ranking_receiver_ladder(playername):
+    file = open("ladder_player_receiver.txt")
+    lines = file.readlines()
+    for line in lines:
+        if line.__contains__(playername):
+            return line.split('-')[0]
+
 
 def parsing_db():
     #Open and read the original file
@@ -151,3 +158,4 @@ def build_ladder_atp_receiver():
 
 #retrieve_player_statsAce("cirstea-sorana", "fBPsm3Iq")
 #build_ladder_atp_receiver()
+#print(retrieve_player_ranking_receiver_ladder("parry-diane"))
