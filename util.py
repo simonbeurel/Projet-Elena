@@ -80,6 +80,7 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     id_matches = []
     number_aces_player = []
     number_aces_opponent = []
+    opponent_links = []
     for element in elem:
         id_matches.append(element.get_attribute("id")[4:])
 
@@ -99,6 +100,9 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
 
         if away_home_participant[0].get_attribute('href') == url:
             is_player_home = True
+            opponent_links.append(away_home_participant[1].get_attribute('href'))
+        else:
+            opponent_links.append(away_home_participant[0].get_attribute('href'))
 
         for i in range(len(element_data_test_id)):
             if element_data_test_id[i].text == "Aces":
@@ -118,7 +122,7 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     #execution_time = time() - temps_debut
     #print(f"Temps d'exécution : {execution_time}")
 
-    return [number_aces_player,number_aces_opponent]
+    return [number_aces_player,number_aces_opponent, opponent_links]
 
 
 def build_ladder_atp_receiver():
@@ -163,6 +167,6 @@ def build_ladder_atp_receiver():
 
     print("*** DONE ALL ***")
 
-#retrieve_player_statsAce("cirstea-sorana", "fBPsm3Iq")
+print(retrieve_player_statsAce("cirstea-sorana", "fBPsm3Iq"))
 #build_ladder_atp_receiver()
 #print(retrieve_player_ranking_receiver_ladder("parry-diane"))
