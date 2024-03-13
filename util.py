@@ -22,6 +22,13 @@ def retrieve_player_ranking_receiver_ladder(playername):
         if line.__contains__(playername):
             return line.split('-')[0]
 
+def retrieve_player_ranking_server_ladder(playername):
+    file = open("ladder_player_server.txt")
+    lines = file.readlines()
+    for line in lines:
+        if line.__contains__(playername):
+            return line.split('-')[0]
+
 
 def parsing_db():
     #Open and read the original file
