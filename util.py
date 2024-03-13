@@ -47,10 +47,12 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     # player_name = rybakina-elena
     # player_id = UDzElXdm
 
-    temps_debut = time()
+    #temps_debut = time()
 
     if driver_arg is None:
-        driver = webdriver.Firefox()
+        options = Options()
+        options.add_argument("--headless")
+        driver = webdriver.Firefox(options=options)
     else:
         driver = driver_arg
 
@@ -99,8 +101,8 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     if driver_arg is None:
         driver.close()
 
-    execution_time = time() - temps_debut
-    print(f"Temps d'exécution : {execution_time}")
+    #execution_time = time() - temps_debut
+    #print(f"Temps d'exécution : {execution_time}")
 
     return [number_aces_player,number_aces_opponent]
 
@@ -148,4 +150,4 @@ def build_ladder_atp_receiver():
     print("*** DONE ALL ***")
 
 #retrieve_player_statsAce("cirstea-sorana", "fBPsm3Iq")
-build_ladder_atp_receiver()
+#build_ladder_atp_receiver()
