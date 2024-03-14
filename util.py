@@ -44,7 +44,7 @@ def parsing_db():
 
 
 
-def retrieve_player_id(first_name, last_name):
+def retrieve_player_id(last_name, first_name):
     list = parsing_db()
     nom_de_famille = ""
     for element in list:
