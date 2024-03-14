@@ -44,7 +44,7 @@ def parsing_db():
 
 
 
-def retrieve_player_id(first_name, last_name):
+def retrieve_player_id(last_name, first_name):
     list = parsing_db()
     nom_de_famille = ""
     for element in list:
@@ -167,6 +167,6 @@ def build_ladder_atp_receiver():
 
     print("*** DONE ALL ***")
 
-print(retrieve_player_statsAce("cirstea-sorana", "fBPsm3Iq"))
+#print(retrieve_player_statsAce("cirstea-sorana", "fBPsm3Iq"))
 #build_ladder_atp_receiver()
 #print(retrieve_player_ranking_receiver_ladder("parry-diane"))
