@@ -100,9 +100,9 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
 
         if away_home_participant[0].get_attribute('href') == url:
             is_player_home = True
-            opponent_links.append(away_home_participant[1].get_attribute('href'))
+            opponent_links.append(away_home_participant[1].get_attribute('href').split("/")[4])
         else:
-            opponent_links.append(away_home_participant[0].get_attribute('href'))
+            opponent_links.append(away_home_participant[0].get_attribute('href').split("/")[4])
 
         for i in range(len(element_data_test_id)):
             if element_data_test_id[i].text == "Aces":
@@ -167,6 +167,6 @@ def build_ladder_atp_receiver():
 
     print("*** DONE ALL ***")
 
-print(retrieve_player_statsAce("cirstea-sorana", "fBPsm3Iq"))
+#print(retrieve_player_statsAce("cirstea-sorana", "fBPsm3Iq"))
 #build_ladder_atp_receiver()
 #print(retrieve_player_ranking_receiver_ladder("parry-diane"))

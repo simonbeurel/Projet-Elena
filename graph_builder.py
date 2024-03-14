@@ -15,9 +15,32 @@ def build_graph_aces_last_10_matches(array_aces, playername):
     plt.legend()
     plt.show()
 
-def build_graph_aces_against_ranked_receiver(array_aces, playername):
-    return ""
+def build_graph_aces_against_ranked_receiver(array_aces, array_opponents, playername):
+    array_rankings_opponents = []
+    index_to_remove = []
+    for i in range(len(array_opponents)):
+        result = retrieve_player_ranking_receiver_ladder(array_opponents[i])
+        if result is None:
+            index_to_remove.append(i)
+        else:
+            array_rankings_opponents.append(result)
 
-#playerName="parry-diane"
-#result = retrieve_player_statsAce(playerName,"hQQLzcNT")
+    for index in sorted(index_to_remove, reverse=True):
+        del array_aces[index]
+
+    print()
+    print(array_aces)
+    print(array_rankings_opponents)
+
+    plt.plot(array_rankings_opponents, array_aces, marker='o', linestyle='-')
+    plt.title(f"Nombre d'aces de {playername} en fonction du rankd de l'adversaire")
+    plt.xlabel("Rank de l'adversaire")
+    plt.ylabel("Nombre d'aces")
+    plt.show()
+
+
+playerName="parry-diane"
+result = retrieve_player_statsAce(playerName,"hQQLzcNT")
 #build_graph_aces_last_10_matches(result[0][::-1], playerName)
+
+build_graph_aces_against_ranked_receiver(result[0], result[2], playerName)
