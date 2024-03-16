@@ -61,8 +61,6 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     # player_name = rybakina-elena
     # player_id = UDzElXdm
 
-    #temps_debut = time()
-
     if driver_arg is None:
         options = Options()
         options.add_argument("--headless")
@@ -86,7 +84,7 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
 
     for id in id_matches:
         driver.get(f"https://www.flashscore.fr/match/{id}/#/resume-du-match/statistiques-du-match/0")
-        sleep(5)
+        sleep(2)
         try:
             WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.TAG_NAME, "strong")))
             WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, "participant__participantLink")))
@@ -119,9 +117,6 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     if driver_arg is None:
         driver.close()
 
-    #execution_time = time() - temps_debut
-    #print(f"Temps d'exécution : {execution_time}")
-
     return [number_aces_player,number_aces_opponent, opponent_links]
 
 
@@ -134,16 +129,30 @@ def build_ladder_atp_receiver():
     options.add_argument("--headless")
     driver = webdriver.Firefox(options=options)
 
+    result_temp = []
+
     iterator = 1
     for line in file.readlines():
+        debut = time()
         name_player = line.split('/')[2]
         id_player = line.split('/')[3]
         print(f'[X] {name_player} {iterator}[X]')
         result = retrieve_player_statsAce(name_player, id_player, driver)
-        ladder_receiver[name_player] = sum(result[1]) / len(result[1])
-        ladder_server[name_player] = sum(result[0]) / len(result[0])
+        result_temp.append(result)
         iterator += 1
-        if iterator == 101  : break
+        if iterator == 5  : break
+        print(f"Temps d'exécution : {time() - debut}")
+    file.close()
+
+    print(f'Taille : {len(result_temp)}')
+    file = open("./bdd_player_id_flashscore.txt", 'r')
+    lines = file.readlines()
+    print(len(lines))
+    ladder_receiver.clear()
+    ladder_server.clear()
+    for i in range(len(result_temp)):
+        ladder_receiver[lines[i].split('/')[2]] = sum(result_temp[i][1]) / len(result_temp[i][1])
+        ladder_server[lines[i].split('/')[2]] = sum(result_temp[i][0]) / len(result_temp[i][0])
     file.close()
 
     sorted_ladder_receiver = dict(sorted(ladder_receiver.items(), key=lambda item: item[1]))
@@ -168,5 +177,5 @@ def build_ladder_atp_receiver():
     print("*** DONE ALL ***")
 
 #print(retrieve_player_statsAce("cirstea-sorana", "fBPsm3Iq"))
-#build_ladder_atp_receiver()
+build_ladder_atp_receiver()
 #print(retrieve_player_ranking_receiver_ladder("parry-diane"))
