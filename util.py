@@ -11,6 +11,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.options import Options
 
+import requests
+from bs4 import BeautifulSoup
+
 
 driver_path = '/usr/local/bin/chromedriver'
 
@@ -83,25 +86,39 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
         id_matches.append(element.get_attribute("id")[4:])
 
     for id in id_matches:
-        driver.get(f"https://www.flashscore.fr/match/{id}/#/resume-du-match/statistiques-du-match/0")
-        sleep(2)
-        try:
-            WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.TAG_NAME, "strong")))
-            WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.CLASS_NAME, "participant__participantLink")))
-        except TimeoutException:
-            print("Match pas joué")
-
-        element_data_test_id = driver.find_elements(By.TAG_NAME, 'strong')
-        away_home_participant = driver.find_elements(By.CLASS_NAME, "participant__participantLink")
-
         is_player_home = False
 
-        if away_home_participant[0].get_attribute('href') == url:
-            is_player_home = True
-            opponent_links.append(away_home_participant[1].get_attribute('href').split("/")[4])
+        url = f"https://m.flashscore.fr/match/{id}/?t=statistiques-du-match"
+        response = requests.get(url)
+        if response.status_code!=200:
+            print("ERROR GET URL")
+            continue
         else:
-            opponent_links.append(away_home_participant[0].get_attribute('href').split("/")[4])
+            soup = BeautifulSoup(response.text, 'html.parser')
 
+        h3_elements = soup.find_all('h3')
+        for h3 in h3_elements:
+            array_players_current_match = h3.text.split('-')
+            if player_name.split('-')[0].lower() in array_players_current_match[0].lower():
+                is_player_home = True
+            else:
+                is_player_home = False
+        print(f"Le joueur est-il à domicile ? {is_player_home}")
+
+
+        text_elements = soup.find_all(text=True)
+        text_list = [text.strip() for text in text_elements if text.strip()]
+        for i in range(len(text_list)):
+            if text_list[i] == "Aces":
+                if is_player_home:
+                    number_aces_player.append(int(text_list[i - 1]))
+                    number_aces_opponent.append(int(text_list[i + 1]))
+                else:
+                    number_aces_player.append(int(text_list[i + 1]))
+                    number_aces_opponent.append(int(text_list[i - 1]))
+                break
+
+        '''
         for i in range(len(element_data_test_id)):
             if element_data_test_id[i].text == "Aces":
                 if is_player_home:
@@ -110,6 +127,7 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
                 else:
                     number_aces_player.append(int(element_data_test_id[i + 1].text))
                     number_aces_opponent.append(int(element_data_test_id[i - 1].text))
+        '''
 
     print(number_aces_player)
     print(number_aces_opponent)
@@ -177,5 +195,5 @@ def build_ladder_atp_receiver():
     print("*** DONE ALL ***")
 
 #print(retrieve_player_statsAce("cirstea-sorana", "fBPsm3Iq"))
-build_ladder_atp_receiver()
+#build_ladder_atp_receiver()
 #print(retrieve_player_ranking_receiver_ladder("parry-diane"))
