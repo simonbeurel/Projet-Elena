@@ -1,845 +1,1000 @@
 [X] swiatek-iga 1[X]
-Nombre de matchs trouvés : 11
-[0, 2, 1, 0, 2, 5, 1, 4, 1, 2]
-[2, 1, 0, 2, 4, 1, 3, 4, 0, 3]
-Temps d'exécution : 67.209801197052
-[X] sabalenka-aryna 2[X]
 Nombre de matchs trouvés : 10
+[2, 0, 2, 1, 0, 2, 5, 1, 4, 1]
+[1, 2, 1, 0, 2, 4, 1, 3, 4, 0]
+Temps d'exécution : 9.042047500610352
+[X] sabalenka-aryna 2[X]
+Nombre de matchs trouvés : 11
 [4, 8, 10, 8, 3, 4, 4, 6, 0, 4]
 [2, 1, 3, 14, 6, 5, 2, 3, 0, 2]
-Temps d'exécution : 57.18972086906433
+Temps d'exécution : 6.987027406692505
 [X] gauff-coco 3[X]
-Nombre de matchs trouvés : 10
-[7, 3, 3, 2, 3, 5, 4, 2, 5, 1]
-[0, 0, 3, 1, 1, 8, 0, 1, 4, 2]
-Temps d'exécution : 55.370614767074585
+Nombre de matchs trouvés : 11
+[3, 7, 3, 3, 2, 3, 5, 4, 2, 5]
+[2, 0, 0, 3, 1, 1, 8, 0, 1, 4]
+Temps d'exécution : 8.139530897140503
 [X] rybakina-elena 4[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [13, 4, 3, 3, 6, 10, 7, 3, 9]
 [3, 0, 2, 2, 1, 2, 1, 0, 6]
-Temps d'exécution : 55.83556771278381
+Temps d'exécution : 7.55934739112854
 [X] pegula-jessica 5[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [1, 0, 2, 2, 0, 4, 9, 7, 0]
 [3, 3, 1, 1, 2, 5, 3, 7, 5]
-Temps d'exécution : 58.45438027381897
+Temps d'exécution : 9.459831953048706
 [X] jabeur-ons 6[X]
 Nombre de matchs trouvés : 10
 [4, 4, 4, 8, 2, 5, 1, 1, 2]
 [1, 0, 0, 0, 2, 0, 1, 4, 1]
-Temps d'exécution : 57.100513219833374
+Temps d'exécution : 6.744242191314697
 [X] vondrousova-marketa 7[X]
 Nombre de matchs trouvés : 10
 [4, 5, 1, 9, 6, 3, 2, 5, 1]
 [0, 7, 0, 1, 3, 1, 2, 2, 2]
-Temps d'exécution : 57.46964740753174
+Temps d'exécution : 8.227157831192017
 [X] zheng-qinwen 8[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [6, 3, 3, 6, 4, 7, 6, 4, 10, 5]
 [0, 1, 2, 2, 0, 0, 3, 3, 2, 1]
-Temps d'exécution : 56.413474798202515
+Temps d'exécution : 7.533102989196777
 [X] sakkari-maria 9[X]
 Nombre de matchs trouvés : 11
-[2, 3, 4, 4, 1, 3, 8, 0, 1, 4]
-[0, 3, 4, 1, 0, 0, 7, 1, 2, 0]
-Temps d'exécution : 62.17099142074585
+[1, 2, 2, 3, 4, 4, 1, 3, 8, 0]
+[2, 3, 0, 3, 4, 1, 0, 0, 7, 1]
+Temps d'exécution : 8.528891563415527
 [X] ostapenko-jelena 10[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 12
 [9, 4, 6, 2, 1, 6, 6, 10, 4, 6]
 [3, 8, 6, 11, 6, 0, 6, 0, 1, 12]
-Temps d'exécution : 57.07382130622864
+Temps d'exécution : 9.299701929092407
 [X] muchova-karolina 11[X]
 Nombre de matchs trouvés : 10
 [2, 6, 3, 1, 3, 0, 0, 3, 1, 0]
 [1, 0, 3, 1, 3, 0, 0, 3, 0, 2]
-Temps d'exécution : 59.106940507888794
+Temps d'exécution : 7.0064802169799805
 [X] kasatkina-daria 12[X]
 Nombre de matchs trouvés : 10
 [1, 1, 3, 2, 2, 0, 1, 1, 0, 4]
 [0, 0, 2, 3, 1, 3, 3, 0, 2, 3]
-Temps d'exécution : 55.59015345573425
+Temps d'exécution : 8.126159429550171
 [X] haddad-maia-beatriz 13[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 12
 [4, 0, 4, 0, 1, 3, 0, 1, 1, 0]
 [4, 2, 4, 1, 0, 1, 4, 4, 3, 1]
-Temps d'exécution : 57.89595866203308
+Temps d'exécution : 7.582547903060913
 [X] paolini-jasmine 14[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [1, 3, 0, 0, 0, 0, 2, 1, 0]
 [2, 1, 2, 2, 1, 1, 1, 0, 1]
-Temps d'exécution : 58.335766553878784
+Temps d'exécution : 8.674367904663086
 [X] samsonova-liudmila 15[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [2, 0, 13, 3, 6, 4, 5, 4, 4]
 [4, 1, 1, 1, 9, 4, 1, 0, 4]
-Temps d'exécution : 62.639047622680664
+Temps d'exécution : 7.38968825340271
 [X] alexandrova-ekaterina 16[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [4, 2, 2, 6, 5, 6, 12, 8, 8, 2]
 [1, 1, 5, 4, 0, 6, 9, 3, 2, 0]
-Temps d'exécution : 60.13664507865906
+Temps d'exécution : 9.023393869400024
 [X] monfils-elina 17[X]
 Nombre de matchs trouvés : 10
-[1, 2, 4, 3, 7, 0, 2, 1, 2, 0]
-[0, 0, 4, 4, 3, 1, 1, 1, 2, 3]
-Temps d'exécution : 59.85828113555908
+[0, 0, 4, 3, 7, 0, 1, 1, 2, 0]
+[1, 2, 4, 4, 3, 1, 2, 1, 2, 3]
+Temps d'exécution : 7.528589248657227
 [X] kvitova-petra 18[X]
 Nombre de matchs trouvés : 10
 [2, 6, 6, 5, 3, 4, 10, 4, 5]
 [7, 3, 3, 2, 5, 1, 5, 1, 6]
-Temps d'exécution : 59.78146147727966
+Temps d'exécution : 9.064031600952148
 [X] kudermetova-veronika 19[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 12
 [5, 3, 1, 7, 1, 5, 6, 3, 2, 9]
 [1, 0, 8, 2, 1, 5, 1, 8, 2, 4]
-Temps d'exécution : 57.95273232460022
+Temps d'exécution : 8.903046607971191
 [X] keys-madison 20[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 12
 [0, 2, 12, 3, 2, 5, 4, 3, 4, 4]
 [0, 3, 5, 5, 0, 12, 0, 1, 6, 0]
-Temps d'exécution : 60.325549840927124
+Temps d'exécution : 9.225407600402832
 [X] krejcikova-barbora 21[X]
 Nombre de matchs trouvés : 10
 [4, 1, 2, 1, 8, 8, 2, 11, 3, 0]
 [4, 0, 4, 3, 1, 2, 2, 1, 1, 0]
-Temps d'exécution : 61.94368124008179
+Temps d'exécution : 8.566767454147339
 [X] cirstea-sorana 22[X]
 Nombre de matchs trouvés : 10
 [1, 1, 7, 5, 8, 18, 1, 4, 0, 1]
 [0, 0, 5, 7, 1, 1, 0, 0, 1, 0]
-Temps d'exécution : 57.11902976036072
+Temps d'exécution : 6.649931192398071
 [X] garcia-caroline 23[X]
 Nombre de matchs trouvés : 10
 [4, 9, 6, 4, 7, 4, 13, 15, 5, 2]
 [4, 3, 7, 6, 4, 4, 11, 3, 0, 2]
-Temps d'exécution : 58.31056618690491
+Temps d'exécution : 8.625264167785645
 [X] kalinskaya-anna 24[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [1, 0, 2, 1, 1, 8, 1, 3, 3, 0]
 [3, 5, 0, 5, 3, 4, 2, 2, 0, 7]
-Temps d'exécution : 57.52863121032715
+Temps d'exécution : 7.313105583190918
 [X] pavlyuchenkova-anastasia 25[X]
 Nombre de matchs trouvés : 10
 [2, 4, 5, 0, 7, 2, 2, 1, 3]
 [0, 4, 0, 5, 5, 2, 3, 0, 6]
-Temps d'exécution : 58.75967359542847
+Temps d'exécution : 9.194680213928223
 [X] navarro-emma 26[X]
 Nombre de matchs trouvés : 10
 [0, 2, 0, 0, 2, 0, 0, 0, 2, 2]
 [2, 4, 1, 0, 2, 1, 1, 3, 2, 10]
-Temps d'exécution : 59.4478542804718
+Temps d'exécution : 6.756469249725342
 [X] mertens-elise 27[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 12
 [0, 5, 3, 3, 0, 7, 1, 10, 1, 1]
 [3, 7, 1, 1, 0, 2, 2, 0, 3, 2]
-Temps d'exécution : 56.8692262172699
+Temps d'exécution : 9.565277099609375
 [X] vekic-donna 28[X]
 Nombre de matchs trouvés : 10
 [6, 5, 2, 2, 7, 14, 3, 1, 9, 0]
 [2, 3, 6, 0, 5, 8, 3, 1, 12, 3]
-Temps d'exécution : 57.055381059646606
+Temps d'exécution : 6.991465330123901
 [X] noskova-linda 29[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [2, 4, 7, 7, 11, 4, 7, 4, 4, 1]
 [0, 6, 12, 8, 4, 4, 1, 1, 3, 0]
-Temps d'exécution : 57.99765968322754
+Temps d'exécution : 8.993156671524048
 [X] azarenka-victoria 30[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [1, 0, 0, 0, 6, 1, 2, 4, 11, 0]
 [2, 4, 1, 0, 1, 2, 2, 5, 3, 11]
-Temps d'exécution : 59.7102370262146
+Temps d'exécution : 8.141540765762329
 [X] potapova-anastasia 31[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [1, 2, 2, 1, 2, 0, 4, 1, 1, 3]
 [1, 1, 0, 0, 3, 0, 3, 6, 0, 8]
-Temps d'exécution : 58.30293822288513
+Temps d'exécution : 7.962690114974976
 [X] fernandez-leylah-annie 32[X]
 Nombre de matchs trouvés : 10
 [6, 1, 1, 4, 1, 0, 3, 1, 0, 2]
 [2, 3, 2, 4, 6, 4, 5, 3, 13, 0]
-Temps d'exécution : 58.802597522735596
+Temps d'exécution : 7.959270000457764
 [X] yastremska-dayana 33[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 12
 [0, 6, 3, 2, 0, 4, 3, 3, 5, 5]
 [0, 0, 3, 7, 4, 3, 4, 4, 4, 0]
-Temps d'exécution : 58.58755040168762
+Temps d'exécution : 7.624783039093018
 [X] kostyuk-marta 34[X]
 Nombre de matchs trouvés : 10
 [2, 1, 0, 2, 1, 3, 5, 4, 2]
 [0, 1, 2, 0, 2, 0, 0, 1, 0]
-Temps d'exécution : 55.856281995773315
+Temps d'exécution : 7.215311527252197
 [X] kalinina-anhelina 35[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 12
 [0, 0, 3, 1, 3, 3, 0, 0, 1, 3]
 [2, 8, 9, 0, 1, 7, 6, 4, 5, 5]
-Temps d'exécution : 57.743945360183716
+Temps d'exécution : 8.669275283813477
 [X] tsurenko-lesia 36[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [0, 0, 0, 0, 0, 0, 0, 0, 0]
-[0, 0, 3, 4, 1, 4, 0, 2, 1]
-Temps d'exécution : 59.46339297294617
+[3, 0, 0, 3, 4, 1, 4, 0, 2]
+Temps d'exécution : 9.1465744972229
 [X] andreeva-mirra 37[X]
 Nombre de matchs trouvés : 10
 [1, 1, 3, 5, 2, 3, 2, 2, 2]
 [0, 3, 1, 0, 2, 1, 5, 1, 4]
-Temps d'exécution : 61.98780918121338
+Temps d'exécution : 6.649453163146973
 [X] pliskova-karolina 38[X]
 Nombre de matchs trouvés : 10
 [3, 8, 16, 13, 8, 12, 6, 19, 4]
 [3, 5, 7, 0, 10, 7, 1, 4, 6]
-Temps d'exécution : 59.58907151222229
+Temps d'exécution : 8.089015007019043
 [X] bouzkova-marie 39[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [0, 3, 2, 4, 9, 0, 3, 2, 3, 0]
 [1, 0, 2, 3, 0, 0, 3, 0, 0, 3]
-Temps d'exécution : 61.03008580207825
+Temps d'exécution : 7.174350261688232
 [X] stephens-sloane 40[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [0, 0, 0, 0, 1, 0, 0, 0, 2, 1]
 [1, 1, 0, 0, 1, 1, 1, 4, 5, 3]
-Temps d'exécution : 59.46415710449219
+Temps d'exécution : 8.597773790359497
 [X] wang-xinyu-2001 41[X]
-Nombre de matchs trouvés : 10
-[1, 3, 5, 1, 3, 2, 0, 1, 3, 1]
-[3, 1, 7, 4, 3, 1, 1, 0, 1, 1]
-Temps d'exécution : 60.188496589660645
+Nombre de matchs trouvés : 12
+[6, 1, 3, 5, 1, 3, 2, 0, 1, 3]
+[2, 3, 1, 7, 4, 3, 1, 1, 0, 1]
+Temps d'exécution : 7.47787618637085
 [X] frech-magdalena 42[X]
 Nombre de matchs trouvés : 10
 [0, 3, 3, 3, 1, 3, 7, 2, 1, 1]
 [2, 2, 13, 3, 2, 0, 1, 2, 0, 0]
-Temps d'exécution : 57.5582218170166
+Temps d'exécution : 8.43161129951477
 [X] siniakova-katerina 43[X]
-Nombre de matchs trouvés : 10
-[0, 6, 1, 2, 2, 1, 1, 1, 0, 2]
-[2, 2, 0, 0, 2, 5, 2, 1, 5, 10]
-Temps d'exécution : 59.48981499671936
+Nombre de matchs trouvés : 12
+[4, 0, 6, 1, 2, 2, 1, 1, 1, 0]
+[0, 2, 2, 0, 0, 2, 5, 2, 1, 5]
+Temps d'exécution : 6.976962089538574
 [X] rus-arantxa 44[X]
 Nombre de matchs trouvés : 10
 [1, 0, 1, 8, 4, 3, 3, 3, 4, 2]
 [6, 2, 0, 6, 8, 0, 0, 1, 1, 3]
-Temps d'exécution : 58.81111717224121
+Temps d'exécution : 8.734129190444946
 [X] dolehide-caroline 45[X]
-Nombre de matchs trouvés : 10
-[0, 2, 0, 3, 4, 0, 2, 1, 1, 2]
-[0, 1, 2, 3, 6, 4, 1, 3, 2, 3]
-Temps d'exécution : 58.81944441795349
+Nombre de matchs trouvés : 11
+[6, 0, 2, 0, 3, 4, 0, 2, 1, 1]
+[3, 0, 1, 2, 3, 6, 4, 1, 3, 2]
+Temps d'exécution : 7.39546275138855
 [X] burel-clara 46[X]
 Nombre de matchs trouvés : 10
-[1, 5, 1, 5, 5, 3, 5, 3, 8, 2]
-[2, 3, 0, 0, 7, 0, 0, 1, 4, 0]
-Temps d'exécution : 60.389472007751465
+[2, 1, 5, 1, 5, 5, 3, 5, 3, 8]
+[0, 2, 3, 0, 0, 7, 0, 0, 1, 4]
+Temps d'exécution : 8.443689823150635
 [X] maria-tatjana 47[X]
 Nombre de matchs trouvés : 10
 [2, 2, 3, 3, 4, 5, 2, 2, 6, 7]
 [0, 0, 4, 1, 3, 0, 3, 0, 3, 0]
-Temps d'exécution : 62.16835045814514
+Temps d'exécution : 7.013051271438599
 [X] collins-danielle 48[X]
 Nombre de matchs trouvés : 10
 [4, 1, 0, 4, 7, 0, 5, 3, 1, 0]
 [2, 0, 2, 1, 4, 1, 1, 4, 1, 1]
-Temps d'exécution : 56.56731176376343
+Temps d'exécution : 7.879894018173218
 [X] boulter-katie 49[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [1, 2, 2, 3, 4, 3, 3, 4, 1, 7]
 [1, 1, 2, 5, 4, 0, 8, 2, 7, 4]
-Temps d'exécution : 57.795061349868774
+Temps d'exécution : 8.61793327331543
 [X] sorribes-tormo-sara 50[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [0, 0, 4, 0, 1, 1, 1, 0, 0, 2]
 [3, 1, 4, 1, 0, 3, 1, 2, 0, 3]
-Temps d'exécution : 59.09415936470032
+Temps d'exécution : 7.910701513290405
 [X] blinkova-anna 51[X]
 Nombre de matchs trouvés : 10
-[2, 3, 3, 1, 0, 4, 5, 2, 3, 1]
-[2, 1, 3, 2, 6, 3, 0, 1, 5, 3]
-Temps d'exécution : 58.29030108451843
+[2, 2, 3, 3, 1, 0, 4, 5, 2, 3]
+[4, 2, 1, 3, 2, 6, 3, 0, 1, 5]
+Temps d'exécution : 11.503802061080933
 [X] bronzetti-lucia 52[X]
 Nombre de matchs trouvés : 10
-[3, 2, 2, 5, 0, 3, 7, 2, 0, 5]
-[3, 0, 0, 9, 0, 2, 6, 3, 1, 3]
-Temps d'exécution : 64.21419835090637
+[5, 3, 2, 2, 5, 0, 3, 7, 2, 0]
+[4, 3, 0, 0, 9, 0, 2, 6, 3, 1]
+Temps d'exécution : 6.516579627990723
 [X] linette-magda 53[X]
-Nombre de matchs trouvés : 10
-[3, 4, 0, 5, 4, 1, 2, 2, 9, 2]
-[1, 3, 7, 0, 1, 0, 4, 0, 3, 4]
-Temps d'exécution : 59.067246198654175
+Nombre de matchs trouvés : 11
+[3, 3, 4, 0, 5, 4, 1, 2, 2, 9]
+[0, 1, 3, 7, 0, 1, 0, 4, 0, 3]
+Temps d'exécution : 9.069371223449707
 [X] kenin-sofia 54[X]
 Nombre de matchs trouvés : 10
 [0, 1, 0, 5, 2, 1, 3, 1, 1, 0]
 [0, 18, 9, 7, 5, 13, 5, 4, 1, 1]
-Temps d'exécution : 61.42353701591492
+Temps d'exécution : 7.150338649749756
 [X] gracheva-varvara 55[X]
 Nombre de matchs trouvés : 10
 [1, 1, 0, 0, 0, 2, 2, 2, 2, 1]
 [1, 4, 5, 3, 6, 5, 1, 0, 4, 5]
-Temps d'exécution : 60.723167181015015
+Temps d'exécution : 8.747610569000244
 [X] cocciaretto-elisabetta 56[X]
 Nombre de matchs trouvés : 10
-[3, 3, 2, 0, 0, 0, 1, 5, 2, 1]
-[1, 2, 1, 0, 1, 4, 3, 4, 0, 3]
-Temps d'exécution : 58.34568953514099
+[0, 3, 3, 2, 0, 0, 0, 1, 5, 2]
+[1, 1, 2, 1, 0, 1, 4, 3, 4, 0]
+Temps d'exécution : 6.1943769454956055
 [X] bencic-belinda 57[X]
 Nombre de matchs trouvés : 10
 [3, 0, 1, 1, 3, 3, 1, 6, 2, 1]
 [2, 5, 2, 2, 1, 0, 8, 5, 14, 3]
-Temps d'exécution : 63.913715839385986
+Temps d'exécution : 9.128690719604492
 [X] zhu-lin 58[X]
 Nombre de matchs trouvés : 10
 [2, 0, 0, 3, 1, 3, 0, 2, 5, 2]
 [3, 3, 4, 4, 7, 0, 1, 2, 1, 1]
-Temps d'exécution : 60.774569034576416
+Temps d'exécution : 6.6985156536102295
 [X] martic-petra 59[X]
 Nombre de matchs trouvés : 10
 [3, 3, 6, 4, 6, 10, 11, 7, 6, 5]
 [1, 3, 4, 7, 8, 2, 7, 2, 2, 4]
-Temps d'exécution : 61.35928010940552
+Temps d'exécution : 8.209805250167847
 [X] trevisan-martina 60[X]
 Nombre de matchs trouvés : 10
 [3, 0, 2, 1, 0, 4, 4, 3, 0, 1]
 [4, 1, 2, 6, 1, 1, 3, 2, 5, 1]
-Temps d'exécution : 59.60245609283447
+Temps d'exécution : 7.036640167236328
 [X] stearns-peyton 61[X]
-Nombre de matchs trouvés : 10
-[3, 1, 4, 1, 3, 2, 3, 4, 7, 3]
-[10, 0, 7, 9, 1, 7, 2, 2, 4, 8]
-Temps d'exécution : 59.753169298172
+Nombre de matchs trouvés : 12
+[3, 3, 1, 4, 1, 3, 2, 3, 4, 7]
+[3, 10, 0, 7, 9, 1, 7, 2, 2, 4]
+Temps d'exécution : 8.505854606628418
 [X] parry-diane 62[X]
-Nombre de matchs trouvés : 10
-[3, 2, 2, 2, 9, 5, 11, 3, 3, 2]
-[3, 2, 6, 2, 3, 0, 4, 3, 4, 0]
-Temps d'exécution : 62.300443172454834
+Nombre de matchs trouvés : 11
+[3, 3, 2, 2, 2, 9, 5, 11, 3, 3]
+[3, 3, 2, 6, 2, 3, 0, 4, 3, 4]
+Temps d'exécution : 7.269439458847046
 [X] avanesyan-elina 63[X]
 Nombre de matchs trouvés : 10
 [2, 0, 0, 1, 2, 0, 0, 0, 0, 0]
 [2, 3, 2, 6, 1, 0, 3, 1, 0, 1]
-Temps d'exécution : 60.200591802597046
+Temps d'exécution : 8.275376081466675
 [X] wang-xiyu 64[X]
-Nombre de matchs trouvés : 10
-[3, 3, 8, 2, 4, 7, 11, 6, 6, 1]
-[5, 0, 0, 0, 0, 1, 2, 0, 3, 3]
-Temps d'exécution : 60.9696261882782
+Nombre de matchs trouvés : 12
+[3, 3, 3, 8, 2, 4, 7, 11, 6, 6]
+[0, 5, 0, 0, 0, 0, 1, 2, 0, 3]
+Temps d'exécution : 7.979391813278198
 [X] bogdan-ana 65[X]
 Nombre de matchs trouvés : 10
-[3, 6, 6, 8, 3, 1, 3, 1, 7, 1]
-[2, 4, 5, 4, 1, 6, 2, 0, 5, 4]
-Temps d'exécution : 61.89703392982483
+[0, 3, 6, 6, 8, 3, 1, 3, 1, 7]
+[4, 2, 4, 5, 4, 1, 6, 2, 0, 5]
+Temps d'exécution : 8.036881685256958
 [X] sherif-mayar 66[X]
 Nombre de matchs trouvés : 10
 [0, 2, 0, 2, 1, 1, 5, 3]
 [0, 1, 4, 5, 2, 0, 1, 3]
-Temps d'exécution : 63.59522867202759
+Temps d'exécution : 7.3033154010772705
 [X] bucsa-cristina 67[X]
-Nombre de matchs trouvés : 10
-[2, 2, 6, 3, 2, 2, 0, 1, 0, 0]
-[0, 1, 8, 0, 7, 0, 1, 7, 1, 3]
-Temps d'exécution : 63.33265018463135
+Nombre de matchs trouvés : 11
+[1, 2, 2, 6, 3, 2, 2, 0, 1, 0]
+[1, 0, 1, 8, 0, 7, 0, 1, 7, 1]
+Temps d'exécution : 8.091043710708618
 [X] yuan-yue-1998 68[X]
-Nombre de matchs trouvés : 10
-[0, 0, 0, 0, 1, 0, 7, 1, 3, 4]
-[7, 1, 0, 6, 1, 3, 0, 0, 5, 1]
-Temps d'exécution : 58.86209154129028
+Nombre de matchs trouvés : 12
+[4, 0, 0, 0, 0, 1, 0, 7, 1, 3]
+[2, 7, 1, 0, 6, 1, 3, 0, 0, 5]
+Temps d'exécution : 8.265947580337524
 [X] wang-yafan 69[X]
 Nombre de matchs trouvés : 10
-[1, 1, 4, 2, 2, 0, 0, 9, 2, 2]
-[3, 1, 0, 0, 2, 1, 1, 5, 2, 3]
-Temps d'exécution : 59.304607629776
+[3, 1, 1, 4, 2, 2, 0, 0, 9, 2]
+[3, 3, 1, 0, 0, 2, 1, 1, 5, 2]
+Temps d'exécution : 6.685680389404297
 [X] krueger-ashlyn 70[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [2, 7, 7, 1, 3, 1, 2, 4, 4, 6]
 [1, 16, 6, 3, 0, 1, 0, 4, 2, 1]
-Temps d'exécution : 58.540268421173096
+Temps d'exécution : 8.13648247718811
 [X] golubic-viktorija 71[X]
 Nombre de matchs trouvés : 10
 [2, 1, 1, 0, 1, 0, 0, 0, 0, 4]
 [0, 0, 2, 1, 6, 3, 3, 2, 5, 0]
-Temps d'exécution : 59.837655544281006
+Temps d'exécution : 6.6829833984375
 [X] badosa-paula 72[X]
-Nombre de matchs trouvés : 10
-[8, 5, 3, 0, 3, 3, 9, 8, 6, 1]
-[3, 3, 1, 1, 1, 4, 4, 1, 4, 1]
-Temps d'exécution : 63.801931858062744
+Nombre de matchs trouvés : 11
+[5, 8, 5, 3, 0, 3, 3, 9, 8, 6]
+[5, 3, 3, 1, 1, 1, 4, 4, 1, 4]
+Temps d'exécution : 7.820431470870972
 [X] shnaider-diana 73[X]
-Nombre de matchs trouvés : 10
-[3, 11, 1, 0, 1, 2, 3, 2, 3, 1]
-[1, 1, 2, 6, 4, 3, 5, 2, 1, 0]
-Temps d'exécution : 59.47670006752014
+Nombre de matchs trouvés : 11
+[2, 1, 3, 11, 1, 0, 1, 2, 3, 2]
+[2, 0, 1, 1, 2, 6, 4, 3, 5, 2]
+Temps d'exécution : 7.25677227973938
 [X] tomova-viktoriya 74[X]
 Nombre de matchs trouvés : 10
 [3, 0, 1, 7, 4, 0, 2, 1, 0, 1]
 [9, 0, 13, 1, 0, 5, 0, 0, 2, 1]
-Temps d'exécution : 60.79655981063843
+Temps d'exécution : 7.739394187927246
 [X] cristian-jaqueline 75[X]
 Nombre de matchs trouvés : 10
-[2, 2, 5, 5, 5, 6, 4, 4, 2, 1]
-[1, 2, 1, 1, 6, 0, 2, 1, 7, 1]
-Temps d'exécution : 59.055726289749146
+[3, 2, 2, 5, 5, 5, 6, 4, 4, 2]
+[3, 1, 2, 1, 1, 6, 0, 2, 1, 7]
+Temps d'exécution : 6.878826141357422
 [X] schmiedlova-anna-karolina 76[X]
 Nombre de matchs trouvés : 10
-[1, 0, 0, 1, 7, 0, 1, 1, 0, 1]
-[3, 7, 2, 1, 4, 2, 3, 4, 3, 5]
-Temps d'exécution : 59.83847212791443
+[0, 6, 0, 1, 0, 0, 1, 7, 0, 1]
+[3, 8, 7, 3, 7, 2, 1, 4, 2, 3]
+Temps d'exécution : 8.039758205413818
 [X] korpatsch-tamara 77[X]
 Nombre de matchs trouvés : 10
-[0, 1, 2, 0, 2, 2, 0, 2, 1, 0]
-[0, 1, 0, 2, 1, 8, 4, 5, 5, 1]
-Temps d'exécution : 61.37075734138489
+[0, 4, 0, 1, 2, 0, 2, 2, 0, 2]
+[2, 0, 0, 1, 0, 2, 1, 8, 4, 5]
+Temps d'exécution : 6.8047568798065186
 [X] minnen-greetje 78[X]
-Nombre de matchs trouvés : 10
-[1, 3, 2, 0, 2, 2, 1, 3, 1, 0]
-[3, 10, 2, 0, 6, 3, 3, 2, 4, 3]
-Temps d'exécution : 57.82774233818054
+Nombre de matchs trouvés : 11
+[1, 2, 1, 3, 2, 0, 2, 2, 1, 3]
+[7, 1, 3, 10, 2, 0, 6, 3, 3, 2]
+Temps d'exécution : 8.306613683700562
 [X] pera-bernarda 79[X]
-Nombre de matchs trouvés : 10
-[0, 1, 2, 3, 4, 4, 10, 4, 0, 2]
-[4, 2, 1, 4, 4, 5, 1, 11, 2, 0]
-Temps d'exécution : 60.44379496574402
+Nombre de matchs trouvés : 11
+[4, 5, 0, 1, 2, 3, 4, 4, 10, 4]
+[5, 1, 4, 2, 1, 4, 4, 5, 1, 11]
+Temps d'exécution : 6.913271188735962
 [X] putintseva-yulia 80[X]
-Nombre de matchs trouvés : 10
-[0, 0, 1, 1, 0, 0, 0, 0, 1, 0]
-[1, 0, 4, 1, 3, 0, 2, 11, 1, 2]
-Temps d'exécution : 58.703975439071655
+Nombre de matchs trouvés : 11
+[1, 0, 0, 1, 1, 0, 0, 0, 0, 1]
+[1, 1, 0, 4, 1, 3, 0, 2, 11, 1]
+Temps d'exécution : 8.54722809791565
 [X] hibino-nao 81[X]
 Nombre de matchs trouvés : 10
-[3, 2, 0, 1, 1, 2, 2, 3, 6, 3]
-[4, 0, 3, 7, 0, 1, 6, 4, 7, 2]
-Temps d'exécution : 60.84335899353027
+[5, 3, 2, 0, 1, 1, 2, 2, 3, 6]
+[6, 4, 0, 3, 7, 0, 1, 6, 4, 7]
+Temps d'exécution : 6.994177579879761
 [X] dodin-oceane 82[X]
 Nombre de matchs trouvés : 10
-[1, 4, 4, 2, 2]
-[11, 3, 1, 3, 2]
-Temps d'exécution : 75.15597558021545
+[7, 8, 1, 4, 4, 2, 2]
+[25, 11, 11, 3, 1, 3, 2]
+Temps d'exécution : 7.912773370742798
 [X] townsend-taylor 83[X]
-Nombre de matchs trouvés : 10
-[5, 1, 0, 4, 5, 4, 3, 1, 2, 7]
-[0, 3, 2, 0, 3, 3, 3, 8, 3, 5]
-Temps d'exécution : 60.49594831466675
+Nombre de matchs trouvés : 12
+[4, 10, 7, 5, 1, 0, 4, 5, 4, 3]
+[5, 7, 0, 0, 3, 2, 0, 3, 3, 3]
+Temps d'exécution : 7.304694890975952
 [X] bai-zhuoxuan 84[X]
 Nombre de matchs trouvés : 10
 [1, 2, 3, 0, 3, 0, 3, 2]
 [3, 0, 6, 3, 5, 0, 0, 2]
-Temps d'exécution : 65.7300353050232
+Temps d'exécution : 8.325328588485718
 [X] podoroska-nadia 85[X]
 Nombre de matchs trouvés : 10
-[0, 0, 1, 2, 4, 1, 3, 1, 1, 1]
-[2, 3, 2, 1, 0, 7, 3, 1, 2, 0]
-Temps d'exécution : 59.8308687210083
+[4, 1, 0, 0, 1, 2, 4, 1, 3, 1]
+[1, 1, 2, 3, 2, 1, 0, 7, 3, 1]
+Temps d'exécution : 6.947203874588013
 [X] burrage-jodie 86[X]
 Nombre de matchs trouvés : 10
 [2, 1, 7, 6, 10, 4, 4, 2, 6, 3]
 [2, 4, 2, 0, 3, 0, 0, 0, 9, 4]
-Temps d'exécution : 59.718504190444946
+Temps d'exécution : 8.31323528289795
 [X] wickmayer-yanina 87[X]
 Nombre de matchs trouvés : 10
-[1, 0, 1, 1, 1, 1, 3, 6, 7, 2]
-[0, 0, 8, 4, 5, 2, 1, 13, 7, 6]
-Temps d'exécution : 63.65489912033081
+[5, 0, 1, 0, 1, 1, 1, 1, 3, 6]
+[3, 7, 0, 0, 8, 4, 5, 2, 1, 13]
+Temps d'exécution : 7.001477241516113
 [X] siegemund-laura 88[X]
-Nombre de matchs trouvés : 10
-[0, 1, 1, 1, 0, 3, 0, 0, 2]
-[0, 10, 0, 0, 1, 0, 2, 1, 8]
-Temps d'exécution : 64.27638649940491
+Nombre de matchs trouvés : 12
+[1, 0, 0, 0, 1, 1, 1, 0, 3, 0]
+[3, 0, 3, 0, 10, 0, 0, 1, 0, 2]
+Temps d'exécution : 9.381494283676147
 [X] day-kayla 89[X]
 Nombre de matchs trouvés : 10
-[2, 3, 1, 1, 1, 7, 4, 2, 3, 8]
-[12, 0, 4, 4, 3, 0, 2, 2, 1, 1]
-Temps d'exécution : 62.08151435852051
+[2, 2, 3, 1, 1, 1, 7, 4, 2, 3]
+[3, 12, 0, 4, 4, 3, 0, 2, 2, 1]
+Temps d'exécution : 6.702863454818726
 [X] errani-sara 90[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-[4, 1, 9, 0, 2, 6, 4, 4, 2, 0]
-Temps d'exécution : 59.64513444900513
+[4, 4, 1, 9, 0, 2, 6, 4, 4, 2]
+Temps d'exécution : 8.71629023551941
 [X] dart-harriet 91[X]
 Nombre de matchs trouvés : 10
-[0, 1, 4, 2, 2, 3, 4, 0, 2, 2]
-[2, 1, 0, 2, 0, 1, 6, 1, 5, 3]
-Temps d'exécution : 67.10334730148315
+[1, 1, 0, 1, 4, 2, 2, 3, 4, 0]
+[0, 1, 2, 1, 0, 2, 0, 1, 6, 1]
+Temps d'exécution : 6.876022100448608
 [X] tauson-clara 92[X]
-Nombre de matchs trouvés : 10
-[3, 3, 3, 4, 2, 3, 12, 10, 9]
-[2, 6, 0, 1, 4, 3, 6, 4, 2]
-Temps d'exécution : 62.763264894485474
+Nombre de matchs trouvés : 11
+[3, 25, 5, 3, 3, 3, 4, 2, 3]
+[6, 7, 0, 2, 6, 0, 1, 4, 3]
+Temps d'exécution : 8.24666166305542
 [X] bektas-emina 93[X]
 Nombre de matchs trouvés : 10
-[1, 9, 5, 0, 9, 10, 4, 10, 10, 11]
-[10, 2, 5, 3, 4, 13, 2, 6, 2, 3]
-Temps d'exécution : 62.788307666778564
+[7, 2, 1, 9, 5, 0, 9, 10, 4, 10]
+[10, 2, 10, 2, 5, 3, 4, 13, 2, 6]
+Temps d'exécution : 7.356031894683838
 [X] rakhimova-kamilla 94[X]
 Nombre de matchs trouvés : 10
-[1, 1, 0, 0, 8, 0, 2, 0, 0, 3]
-[2, 6, 2, 5, 1, 3, 8, 1, 11, 3]
-Temps d'exécution : 60.05109000205994
+[2, 1, 1, 0, 0, 8, 0, 2, 0, 0]
+[8, 2, 6, 2, 5, 1, 3, 8, 1, 11]
+Temps d'exécution : 8.470946311950684
 [X] fruhvirtova-brenda 95[X]
-Nombre de matchs trouvés : 10
-[2, 2, 1, 2, 8, 2, 1, 2, 5]
-[4, 3, 0, 4, 1, 5, 2, 0, 2]
-Temps d'exécution : 63.94273328781128
+Nombre de matchs trouvés : 11
+[0, 2, 2, 1, 2, 8, 2, 1, 2, 5]
+[0, 4, 3, 0, 4, 1, 5, 2, 0, 2]
+Temps d'exécution : 7.679625511169434
 [X] andreeva-erika 96[X]
 Nombre de matchs trouvés : 10
 [1, 4, 2, 3, 2, 0, 4, 0, 3, 4]
 [1, 3, 3, 0, 0, 1, 1, 1, 6, 6]
-Temps d'exécution : 60.981576919555664
+Temps d'exécution : 6.838609933853149
 [X] masarova-rebeka 97[X]
 Nombre de matchs trouvés : 10
-[10, 10, 6, 2, 2, 8, 7, 3, 5, 11]
-[3, 1, 1, 0, 1, 1, 0, 0, 2, 0]
-Temps d'exécution : 59.652108907699585
+[6, 10, 10, 6, 2, 2, 8, 7, 3, 5]
+[4, 3, 1, 1, 0, 1, 1, 0, 0, 2]
+Temps d'exécution : 7.397095680236816
 [X] osorio-serrano-maria-camila 98[X]
 Nombre de matchs trouvés : 10
-[1, 1, 0, 0, 0, 2, 1, 3, 2, 0]
-[2, 0, 1, 1, 2, 0, 9, 0, 1, 2]
-Temps d'exécution : 62.718181133270264
+[1, 1, 1, 1, 0, 0, 0, 2, 1, 3]
+[4, 2, 2, 0, 1, 1, 2, 0, 9, 0]
+Temps d'exécution : 7.599148750305176
 [X] rodionova-arina 99[X]
 Nombre de matchs trouvés : 10
-[0, 0, 0, 1, 1, 1, 2, 3, 1, 3]
-[0, 0, 3, 4, 7, 3, 1, 4, 5, 0]
-Temps d'exécution : 63.65417242050171
+[1, 0, 0, 0, 1, 1, 1, 2, 3, 1]
+[0, 0, 0, 3, 4, 7, 3, 1, 4, 5]
+Temps d'exécution : 7.922321557998657
 [X] sasnovich-aliaksandra 100[X]
 Nombre de matchs trouvés : 10
-[2, 12, 1, 7, 2, 3, 1, 0, 5, 3]
-[2, 2, 1, 5, 2, 1, 6, 6, 7, 3]
-Temps d'exécution : 63.09473013877869
+[1, 2, 12, 1, 7, 2, 3, 1, 0, 5]
+[5, 2, 2, 1, 5, 2, 1, 6, 6, 7]
+Temps d'exécution : 7.271789312362671
 [X] carle-maria-lourdes 101[X]
 Nombre de matchs trouvés : 10
-[0, 2, 0, 0, 0]
-[0, 0, 0, 0, 2]
-Temps d'exécution : 74.51242089271545
+[0, 0, 0, 0, 2, 0, 0, 0]
+[0, 1, 0, 0, 0, 0, 0, 2]
+Temps d'exécution : 7.150068283081055
 [X] zarazua-renata 102[X]
 Nombre de matchs trouvés : 10
-[1, 1, 0, 0, 0, 1, 1]
-[0, 7, 1, 5, 3, 1, 7]
-Temps d'exécution : 67.39976620674133
+[0, 1, 1, 0, 0, 0, 1]
+[0, 0, 7, 1, 5, 3, 1]
+Temps d'exécution : 7.192484140396118
 [X] timofeeva-maria 103[X]
 Nombre de matchs trouvés : 10
-[1, 0, 4, 0, 0, 1, 1, 0, 0, 2]
-[0, 0, 0, 1, 1, 0, 0, 0, 0, 0]
-Temps d'exécution : 66.24628901481628
+[2, 3, 1, 0, 4, 0, 0, 1, 1, 0]
+[0, 0, 0, 0, 0, 1, 1, 0, 0, 0]
+Temps d'exécution : 7.82253885269165
 [X] cornet-alize 104[X]
 Nombre de matchs trouvés : 10
-[1, 1, 1, 0, 5, 0, 0, 0, 0]
-[1, 3, 0, 3, 1, 0, 0, 0, 0]
-Temps d'exécution : 62.088807821273804
+[1, 1, 1, 1, 0, 5, 0, 0, 0]
+[0, 1, 3, 0, 3, 1, 0, 0, 0]
+Temps d'exécution : 6.937203884124756
 [X] giorgi-camila 105[X]
 Nombre de matchs trouvés : 10
 [6, 1, 4, 5, 0, 4, 4, 0, 3, 1]
 [4, 1, 10, 8, 5, 9, 7, 4, 0, 5]
-Temps d'exécution : 61.48476576805115
+Temps d'exécution : 7.354505300521851
 [X] baptiste-hailey 106[X]
 Nombre de matchs trouvés : 10
-[3, 7, 6, 5, 5, 14, 11, 4]
-[2, 3, 3, 0, 2, 4, 1, 1]
-Temps d'exécution : 67.77645492553711
+[2, 3, 7, 6, 5, 5, 14, 11, 4]
+[6, 2, 3, 3, 0, 2, 4, 1, 1]
+Temps d'exécution : 7.466182708740234
 [X] bassols-ribera-marina 107[X]
 Nombre de matchs trouvés : 10
-[1, 1, 2, 1, 2]
-[2, 1, 0, 0, 6]
-Temps d'exécution : 75.09934163093567
+[0, 1, 1, 2, 1, 2]
+[3, 2, 1, 0, 0, 6]
+Temps d'exécution : 5.960585117340088
 [X] juvan-kaja 108[X]
 Nombre de matchs trouvés : 10
 [1, 0, 0, 4, 3, 1, 1, 1, 2, 2]
 [0, 0, 1, 0, 1, 0, 1, 1, 0, 5]
-Temps d'exécution : 64.76088500022888
+Temps d'exécution : 8.253993272781372
 [X] grabher-julia 109[X]
 Nombre de matchs trouvés : 10
 [0, 0, 3, 2, 0]
 [0, 2, 7, 0, 3]
-Temps d'exécution : 73.5437023639679
+Temps d'exécution : 7.002244710922241
 [X] liu-claire 110[X]
 Nombre de matchs trouvés : 10
-[5, 0, 1, 3, 4, 4, 0, 3, 3, 5]
-[1, 1, 1, 0, 0, 5, 1, 1, 4, 0]
-Temps d'exécution : 70.60747265815735
+[7, 8, 5, 0, 1, 3, 4, 4, 0, 3]
+[1, 2, 1, 1, 1, 0, 0, 5, 1, 1]
+Temps d'exécution : 7.35842490196228
 [X] bondar-anna 111[X]
 Nombre de matchs trouvés : 10
-[6]
-[4]
-Temps d'exécution : 80.19881820678711
+[7]
+[0]
+Temps d'exécution : 5.93662166595459
 [X] volynets-katie 112[X]
 Nombre de matchs trouvés : 10
-[0, 1, 0, 1, 1, 2, 1, 0, 1, 3]
-[0, 4, 1, 4, 0, 5, 0, 0, 0, 2]
-Temps d'exécution : 64.25632238388062
+[3, 0, 0, 1, 0, 1, 1, 2, 1, 0]
+[5, 0, 0, 4, 1, 4, 0, 5, 0, 0]
+Temps d'exécution : 8.026533603668213
 [X] mandlik-elizabeth 113[X]
 Nombre de matchs trouvés : 10
 [2, 0, 2, 0, 1, 1, 2, 0, 2, 1]
 [5, 0, 1, 2, 1, 1, 1, 3, 3, 0]
-Temps d'exécution : 66.06192469596863
+Temps d'exécution : 6.926006317138672
 [X] zidansek-tamara 114[X]
 Nombre de matchs trouvés : 10
-[0, 0, 2, 0, 1, 7]
-[1, 1, 2, 4, 1, 0]
-Temps d'exécution : 73.90407061576843
+[0, 0, 0, 2, 0, 1, 7]
+[5, 1, 1, 2, 4, 1, 0]
+Temps d'exécution : 8.993682146072388
 [X] semenistaja-darja 115[X]
 Nombre de matchs trouvés : 10
-[0, 0, 0, 2, 1, 2, 1, 1, 1]
-[2, 4, 4, 4, 3, 3, 2, 2, 5]
-Temps d'exécution : 66.48593187332153
+[0, 0, 0, 0, 0, 2, 1, 2, 1, 1]
+[0, 1, 2, 4, 4, 4, 3, 3, 2, 2]
+Temps d'exécution : 7.161660671234131
 [X] riera-julia 116[X]
 Nombre de matchs trouvés : 10
-[1, 0, 5, 1, 5, 2, 2, 6, 4, 3]
-[2, 2, 0, 3, 3, 0, 0, 2, 0, 0]
-Temps d'exécution : 64.74511194229126
+[1, 1, 0, 5, 1, 5, 2, 2, 6, 4]
+[1, 2, 2, 0, 3, 3, 0, 0, 2, 0]
+Temps d'exécution : 8.065320014953613
 [X] parks-alycia 117[X]
-Nombre de matchs trouvés : 10
-[4, 0, 8, 11, 6, 13, 2, 13, 10, 10]
-[1, 1, 2, 0, 1, 0, 3, 0, 0, 1]
-Temps d'exécution : 66.55884647369385
+Nombre de matchs trouvés : 11
+[7, 4, 0, 8, 11, 6, 13, 2, 13, 10]
+[0, 1, 1, 2, 0, 1, 0, 3, 0, 0]
+Temps d'exécution : 8.839670419692993
 [X] begu-irina 118[X]
 Nombre de matchs trouvés : 10
 [1, 1, 1, 1, 1, 1, 3, 3, 3, 0]
 [5, 0, 0, 0, 1, 0, 2, 4, 5, 2]
-Temps d'exécution : 64.99322485923767
+Temps d'exécution : 7.430123805999756
 [X] hontama-mai 119[X]
 Nombre de matchs trouvés : 10
-[0, 0, 0, 0, 2, 1, 0, 0, 0, 0]
-[2, 0, 0, 2, 1, 5, 0, 2, 2, 1]
-Temps d'exécution : 60.26721429824829
+[0, 0, 0, 0, 0, 2, 1, 0, 0, 0]
+[4, 2, 0, 0, 2, 1, 5, 0, 2, 2]
+Temps d'exécution : 8.491066932678223
 [X] kessler-mccartney 120[X]
 Nombre de matchs trouvés : 10
-[2, 2, 3, 0, 2, 0, 0, 2, 1, 0]
-[3, 1, 2, 0, 0, 0, 0, 5, 0, 4]
-Temps d'exécution : 65.05068612098694
+[2, 2, 2, 3, 0, 2, 0, 0, 2, 1]
+[1, 3, 1, 2, 0, 0, 0, 0, 5, 0]
+Temps d'exécution : 6.4970862865448
 [X] arango-emiliana 121[X]
 Nombre de matchs trouvés : 10
-[1, 1, 1, 3, 1, 2, 0, 0, 1]
-[0, 0, 0, 0, 1, 0, 0, 4, 0]
-Temps d'exécution : 64.79294037818909
+[2, 3, 1, 1, 1, 3, 1, 2, 0, 0]
+[3, 2, 0, 0, 0, 0, 1, 0, 0, 4]
+Temps d'exécution : 7.935519218444824
 [X] sanders-storm 122[X]
-Nombre de matchs trouvés : 10
-[2, 1, 2, 8, 6, 3, 5, 4, 0]
-[8, 5, 3, 6, 1, 1, 2, 0, 1]
-Temps d'exécution : 66.63371753692627
+Nombre de matchs trouvés : 11
+[6, 1, 8, 1, 2, 6, 6, 3, 5]
+[3, 0, 2, 5, 3, 8, 1, 1, 2]
+Temps d'exécution : 6.601671457290649
 [X] pigossi-laura 123[X]
 Nombre de matchs trouvés : 10
-[0]
-[1]
-Temps d'exécution : 84.05563569068909
+[0, 0]
+[7, 1]
+Temps d'exécution : 6.876742839813232
 [X] bouzas-maneiro-jessica 124[X]
 Nombre de matchs trouvés : 10
-[0, 2, 3]
-[0, 0, 3]
-Temps d'exécution : 83.06862211227417
+[2, 0, 2, 3]
+[2, 0, 0, 3]
+Temps d'exécution : 6.474932670593262
 [X] danilovic-olga 125[X]
 Nombre de matchs trouvés : 10
 [1, 0, 4, 2, 2, 6, 0, 1, 1, 3]
 [2, 0, 0, 5, 8, 4, 0, 0, 1, 0]
-Temps d'exécution : 69.51949739456177
+Temps d'exécution : 10.179733514785767
 [X] niemeier-jule 126[X]
 Nombre de matchs trouvés : 10
-[1, 4, 1, 4, 2]
-[2, 1, 1, 1, 2]
-Temps d'exécution : 78.51626443862915
+[3, 6, 1, 4, 1, 4, 2]
+[6, 5, 2, 1, 1, 1, 2]
+Temps d'exécution : 6.003335237503052
 [X] sramkova-rebecca 127[X]
 Nombre de matchs trouvés : 10
-[2, 2, 4, 0, 1, 2]
-[0, 2, 6, 0, 0, 0]
-Temps d'exécution : 73.48606944084167
+[8, 4, 2, 2, 4, 0, 1, 2]
+[6, 6, 0, 2, 6, 0, 0, 0]
+Temps d'exécution : 8.153429508209229
 [X] korneeva-alina 128[X]
 Nombre de matchs trouvés : 10
 [8, 4, 2, 3, 4, 2, 3, 2, 3]
 [5, 2, 2, 0, 0, 1, 1, 4, 2]
-Temps d'exécution : 66.81974053382874
+Temps d'exécution : 6.900006055831909
 [X] parrizas-diaz-nuria 129[X]
 Nombre de matchs trouvés : 10
 [0, 0, 1, 0, 1, 0, 0, 1, 0]
 [5, 0, 2, 0, 0, 2, 5, 0, 4]
-Temps d'exécution : 71.02218389511108
+Temps d'exécution : 8.27731442451477
 [X] starodubtsewa-yulia 130[X]
 Nombre de matchs trouvés : 10
-[0, 1, 0, 1, 4, 0, 0]
-[2, 1, 2, 0, 1, 3, 5]
-Temps d'exécution : 69.29693675041199
+[0, 1, 2, 0, 4, 0, 0]
+[2, 1, 0, 1, 1, 3, 5]
+Temps d'exécution : 7.028006315231323
 [X] watson-heather 131[X]
-Nombre de matchs trouvés : 10
-[4, 1, 0, 5, 2]
-[1, 8, 2, 5, 5]
-Temps d'exécution : 82.40345811843872
+Nombre de matchs trouvés : 11
+[11, 4, 1, 0, 5]
+[8, 1, 8, 2, 5]
+Temps d'exécution : 9.92413067817688
 [X] bejlek-sara 132[X]
 Nombre de matchs trouvés : 10
 [1, 2, 0, 0, 0, 0, 1, 0, 1, 1]
 [3, 1, 2, 2, 1, 1, 0, 0, 0, 0]
-Temps d'exécution : 63.55438446998596
+Temps d'exécution : 6.8506386280059814
 [X] galfi-dalma 133[X]
 Nombre de matchs trouvés : 10
 [2, 3, 2, 4, 3, 5, 0, 5, 2, 4]
 [1, 0, 0, 1, 1, 0, 1, 5, 1, 0]
-Temps d'exécution : 65.31258749961853
+Temps d'exécution : 8.628832340240479
 [X] vickery-sachia 134[X]
 Nombre de matchs trouvés : 10
 [1, 1, 1, 1, 1, 2]
 [1, 8, 1, 0, 4, 0]
-Temps d'exécution : 76.66063523292542
+Temps d'exécution : 6.948617935180664
 [X] snigur-daria 135[X]
-Nombre de matchs trouvés : 11
-[0, 0, 1]
-[5, 10, 6]
-Temps d'exécution : 88.95142889022827
+Nombre de matchs trouvés : 10
+[0]
+[5]
+Temps d'exécution : 8.87883973121643
 [X] zakharova-anastasia 136[X]
 Nombre de matchs trouvés : 10
 [3, 0, 3, 2, 0, 3, 1, 1]
 [5, 3, 5, 7, 1, 0, 1, 5]
-Temps d'exécution : 71.11771368980408
+Temps d'exécution : 6.813957452774048
 [X] fruhvirtova-linda 137[X]
 Nombre de matchs trouvés : 10
 [1, 5, 0, 0, 0, 3, 2, 1, 1, 2]
 [2, 5, 0, 1, 2, 0, 2, 2, 2, 4]
-Temps d'exécution : 65.57789850234985
+Temps d'exécution : 8.220936298370361
 [X] sharma-astra 138[X]
 Nombre de matchs trouvés : 10
 [0, 3, 4]
 [2, 8, 3]
-Temps d'exécution : 80.91556453704834
+Temps d'exécution : 6.627380847930908
 [X] hartono-arianne 139[X]
 Nombre de matchs trouvés : 10
 [2, 3, 3, 1, 0, 0, 2, 1, 0, 2]
 [7, 2, 0, 2, 0, 4, 2, 1, 4, 3]
-Temps d'exécution : 69.82767128944397
+Temps d'exécution : 8.096752882003784
 [X] jeanjean-leolia 140[X]
 Nombre de matchs trouvés : 10
 [1, 2, 0, 2, 4, 2]
 [2, 2, 1, 13, 1, 1]
-Temps d'exécution : 72.62676000595093
+Temps d'exécution : 6.682658672332764
 [X] ferro-fiona 141[X]
 Nombre de matchs trouvés : 10
 [0, 0, 0, 0, 2]
 [3, 1, 1, 6, 7]
-Temps d'exécution : 77.2365128993988
+Temps d'exécution : 7.883473873138428
 [X] andreescu-bianca 142[X]
 Nombre de matchs trouvés : 10
 [3, 2, 3, 0, 2, 1, 7, 1, 3, 1]
 [1, 3, 5, 1, 4, 7, 3, 3, 5, 0]
-Temps d'exécution : 64.92506885528564
+Temps d'exécution : 7.172682285308838
 [X] gadecki-olivia 143[X]
 Nombre de matchs trouvés : 10
-[2, 1, 1, 0, 4, 4, 7, 3, 2, 0]
-[2, 0, 2, 4, 7, 1, 2, 0, 0, 0]
-Temps d'exécution : 67.08337831497192
+[2, 1, 1, 0, 4, 4, 7, 3, 2]
+[2, 0, 2, 4, 7, 1, 2, 0, 0]
+Temps d'exécution : 8.202181816101074
 [X] lys-eva 144[X]
 Nombre de matchs trouvés : 10
 [0, 1, 1, 1, 0, 0, 0, 0]
 [5, 5, 3, 0, 0, 2, 1, 1]
-Temps d'exécution : 71.34826040267944
+Temps d'exécution : 7.863145351409912
 [X] friedsam-anna-lena 145[X]
 Nombre de matchs trouvés : 10
 [3, 3, 7, 4, 2, 5, 7]
 [4, 10, 5, 3, 5, 0, 3]
-Temps d'exécution : 76.56007790565491
+Temps d'exécution : 7.4464335441589355
 [X] ponchet-jessika 146[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [6, 7, 4, 6, 7]
 [4, 1, 11, 2, 3]
-Temps d'exécution : 79.93789839744568
+Temps d'exécution : 9.617411613464355
 [X] marino-rebecca 147[X]
 Nombre de matchs trouvés : 10
 [8, 5, 12, 13, 8]
 [1, 0, 0, 2, 0]
-Temps d'exécution : 73.78098011016846
+Temps d'exécution : 6.382206439971924
 [X] saville-daria 148[X]
-Nombre de matchs trouvés : 10
-[2, 1, 4, 4, 0, 0, 1, 2, 7, 3]
-[1, 0, 3, 0, 0, 1, 1, 2, 3, 3]
-Temps d'exécution : 68.11206245422363
+Nombre de matchs trouvés : 11
+[2, 2, 1, 4, 4, 0, 0, 1, 2, 7]
+[0, 1, 0, 3, 0, 0, 1, 1, 2, 3]
+Temps d'exécution : 8.850355625152588
 [X] uchijima-moyuka 149[X]
 Nombre de matchs trouvés : 10
 [0, 1, 3]
 [3, 3, 0]
-Temps d'exécution : 82.80101370811462
+Temps d'exécution : 6.369394302368164
 [X] paquet-chloe 150[X]
 Nombre de matchs trouvés : 10
 [0, 2, 2, 5, 1, 4, 2]
 [0, 0, 4, 3, 1, 0, 4]
-Temps d'exécution : 73.28716659545898
+Temps d'exécution : 8.708009719848633
 [X] radovcic-lulu 151[X]
 Nombre de matchs trouvés : 10
 [6, 3]
 [6, 8]
-Temps d'exécution : 81.54156064987183
+Temps d'exécution : 5.686001777648926
 [X] capurro-taborda-martina 152[X]
 Nombre de matchs trouvés : 10
 [0, 1, 1, 0, 0, 0, 1]
 [0, 4, 3, 0, 2, 0, 1]
-Temps d'exécution : 74.11033916473389
+Temps d'exécution : 7.905761480331421
 [X] preston-taylah 153[X]
 Nombre de matchs trouvés : 10
 [0, 1, 1, 2, 0, 0, 0, 0, 0, 1]
 [2, 4, 4, 3, 0, 2, 1, 5, 1, 4]
-Temps d'exécution : 66.6402108669281
+Temps d'exécution : 6.880478858947754
 [X] seidel-ella 154[X]
 Nombre de matchs trouvés : 10
-[4, 0, 0, 1]
-[0, 4, 6, 5]
-Temps d'exécution : 79.56094717979431
+[4, 0, 0]
+[0, 4, 6]
+Temps d'exécution : 7.611461400985718
 [X] martincova-tereza 155[X]
 Nombre de matchs trouvés : 10
 [1, 1, 1, 3]
 [1, 1, 2, 2]
-Temps d'exécution : 80.97665071487427
+Temps d'exécution : 6.257080078125
 [X] ruse-elena-gabriela 156[X]
-Nombre de matchs trouvés : 10
-[2, 0, 1, 3, 1, 1]
-[3, 1, 2, 1, 0, 0]
-Temps d'exécution : 78.74405097961426
+Nombre de matchs trouvés : 11
+[2, 0, 1, 3, 1]
+[3, 1, 2, 1, 0]
+Temps d'exécution : 7.700112819671631
 [X] stefanini-lucrezia 157[X]
 Nombre de matchs trouvés : 10
 [0, 0, 0, 0, 0]
 [2, 0, 1, 0, 13]
-Temps d'exécution : 80.45579218864441
+Temps d'exécution : 7.182154655456543
 [X] kudermetova-polina 158[X]
-Nombre de matchs trouvés : 10
+Nombre de matchs trouvés : 11
 [2, 3, 5]
 [1, 0, 3]
-Temps d'exécution : 81.84874629974365
+Temps d'exécution : 7.8782713413238525
 [X] birrell-kimberly 159[X]
 Nombre de matchs trouvés : 10
 [3, 0, 5, 4, 1, 1, 4]
 [9, 5, 3, 5, 0, 3, 7]
-Temps d'exécution : 74.54251670837402
+Temps d'exécution : 6.907198667526245
 [X] sebov-katherine 160[X]
 Nombre de matchs trouvés : 10
 [0, 2, 0, 0, 1, 0, 1, 0]
 [1, 2, 1, 0, 2, 3, 7, 1]
-Temps d'exécution : 77.32631492614746
+Temps d'exécution : 8.248323202133179
 [X] babos-timea 161[X]
 Nombre de matchs trouvés : 10
 [1, 0, 4, 2, 5, 18, 13, 4, 4]
 [7, 4, 2, 0, 3, 5, 9, 5, 5]
-Temps d'exécution : 77.37424039840698
+Temps d'exécution : 7.19695258140564
 [X] jacquemot-elsa 162[X]
 Nombre de matchs trouvés : 10
 [1, 4]
 [0, 0]
-Temps d'exécution : 80.78800821304321
+Temps d'exécution : 7.5835654735565186
 [X] brengle-madison 163[X]
 Nombre de matchs trouvés : 10
 [0, 0, 0, 0]
 [3, 4, 3, 0]
-Temps d'exécution : 87.83269381523132
+Temps d'exécution : 6.25606369972229
 [X] sierra-solana 164[X]
 Nombre de matchs trouvés : 10
 [0]
 [6]
-Temps d'exécution : 75.43067359924316
+Temps d'exécution : 6.788011074066162
 [X] naef-celine 165[X]
 Nombre de matchs trouvés : 10
 []
 []
-Temps d'exécution : 87.32871532440186
+Temps d'exécution : 5.9065327644348145
 [X] kraus-sinja 166[X]
 Nombre de matchs trouvés : 10
 [4, 6, 7]
 [14, 0, 16]
-Temps d'exécution : 85.02529859542847
+Temps d'exécution : 6.582815408706665
 [X] li-ann 167[X]
 Nombre de matchs trouvés : 10
 [0, 3, 1, 3, 0, 4, 6]
 [2, 1, 0, 1, 0, 0, 4]
-Temps d'exécution : 75.39954710006714
+Temps d'exécution : 7.723361253738403
 [X] makarova-ekaterina-1996 168[X]
 Nombre de matchs trouvés : 10
 [0, 0, 0, 2, 2, 0]
 [2, 2, 1, 0, 0, 0]
-Temps d'exécution : 72.93663763999939
+Temps d'exécution : 6.578807353973389
 [X] davis-lauren 169[X]
 Nombre de matchs trouvés : 10
-[2, 1, 0, 3, 1, 2, 0, 0, 7]
-[11, 4, 0, 0, 15, 7, 0, 4, 8]
-Temps d'exécution : 86.11771750450134
+[2, 1, 0, 3, 0, 1, 2, 0, 0, 7]
+[11, 4, 0, 0, 0, 15, 7, 0, 4, 8]
+Temps d'exécution : 8.944249391555786
+[X] hon-priscilla 170[X]
+Nombre de matchs trouvés : 10
+[]
+[]
+Temps d'exécution : 6.559101581573486
+[X] udvardy-panna 171[X]
+Nombre de matchs trouvés : 10
+[5, 1, 0]
+[1, 1, 0]
+Temps d'exécution : 6.937877893447876
+[X] jang-su-jeong 172[X]
+Nombre de matchs trouvés : 10
+[5, 0]
+[3, 0]
+Temps d'exécution : 6.0589916706085205
+[X] savinykh-valeria 173[X]
+Nombre de matchs trouvés : 10
+[2, 0, 3]
+[6, 8, 10]
+Temps d'exécution : 7.91571044921875
+[X] hruncakova-viktoria-kuzmova 174[X]
+Nombre de matchs trouvés : 11
+[]
+[]
+Temps d'exécution : 6.4163498878479
+[X] knutson-gabriela 175[X]
+Nombre de matchs trouvés : 10
+[]
+[]
+Temps d'exécution : 7.38013482093811
+[X] bara-irina 176[X]
+Nombre de matchs trouvés : 10
+[0, 0, 0, 4]
+[0, 4, 1, 3]
+Temps d'exécution : 6.25495171546936
+[X] miyazaki-yuriko-lily 177[X]
+Nombre de matchs trouvés : 12
+[]
+[]
+Temps d'exécution : 8.203401803970337
+[X] sonmez-zeynep 178[X]
+Nombre de matchs trouvés : 10
+[0, 1, 2]
+[2, 0, 8]
+Temps d'exécution : 6.292336702346802
+[X] sakatsume-himeno 179[X]
+Nombre de matchs trouvés : 10
+[1, 0]
+[0, 2]
+Temps d'exécution : 7.286013603210449
+[X] eala-alexandra 180[X]
+Nombre de matchs trouvés : 10
+[3, 4, 0]
+[2, 0, 1]
+Temps d'exécution : 5.8697285652160645
+[X] kozlova-kateryna 181[X]
+Nombre de matchs trouvés : 10
+[0, 6, 2, 0, 0, 2, 11, 2, 2]
+[0, 3, 3, 4, 3, 4, 0, 1, 10]
+Temps d'exécution : 8.182480812072754
+[X] fett-jana 182[X]
+Nombre de matchs trouvés : 10
+[]
+[]
+Temps d'exécution : 7.8865461349487305
+[X] akugue-noha-noma 183[X]
+Nombre de matchs trouvés : 10
+[]
+[]
+Temps d'exécution : 7.372908353805542
+[X] ruzic-antonia 184[X]
+Nombre de matchs trouvés : 10
+[]
+[]
+Temps d'exécution : 5.611030101776123
+[X] kostic-natalija 185[X]
+Nombre de matchs trouvés : 10
+[4, 0, 0]
+[1, 1, 0]
+Temps d'exécution : 8.218265771865845
+[X] bolsova-zadoinov-aliona 186[X]
+Nombre de matchs trouvés : 10
+[1, 3, 1, 0, 4, 2]
+[0, 0, 0, 0, 1, 1]
+Temps d'exécution : 7.204427480697632
+[X] zavatska-katarina 187[X]
+Nombre de matchs trouvés : 10
+[1, 1, 1, 2]
+[0, 0, 6, 1]
+Temps d'exécution : 7.990390777587891
+[X] waltert-simona 188[X]
+Nombre de matchs trouvés : 10
+[1, 6, 3, 1, 9]
+[2, 3, 1, 1, 2]
+Temps d'exécution : 6.515796184539795
+[X] teichmann-jil 189[X]
+Nombre de matchs trouvés : 10
+[0, 3, 4, 1, 3, 3, 2]
+[0, 0, 0, 5, 0, 1, 2]
+Temps d'exécution : 7.879324197769165
+[X] erjavec-veronika 190[X]
+Nombre de matchs trouvés : 10
+[0]
+[0]
+Temps d'exécution : 5.87313175201416
+[X] tikhonova-anastasia 191[X]
+Nombre de matchs trouvés : 11
+[]
+[]
+Temps d'exécution : 7.811720609664917
+[X] monnet-carole 192[X]
+Nombre de matchs trouvés : 10
+[2, 0, 0]
+[0, 0, 3]
+Temps d'exécution : 6.220052480697632
+[X] montgomery-robin 193[X]
+Nombre de matchs trouvés : 10
+[3, 3, 8, 6, 4, 5, 6, 5]
+[0, 7, 2, 2, 14, 0, 0, 1]
+Temps d'exécution : 6.765327215194702
+[X] bulgaru-miriam-bianca 194[X]
+Nombre de matchs trouvés : 10
+[3, 1]
+[2, 0]
+Temps d'exécution : 7.0417561531066895
+[X] kawa-katarzyna 195[X]
+Nombre de matchs trouvés : 10
+[2, 0, 1, 2, 1, 2]
+[1, 4, 0, 5, 6, 0]
+Temps d'exécution : 7.821140289306641
+[X] lamens-suzan 196[X]
+Nombre de matchs trouvés : 10
+[]
+[]
+Temps d'exécution : 6.605969190597534
+[X] petra-marcinko 197[X]
+Nombre de matchs trouvés : 10
+[0, 0, 1, 2]
+[1, 0, 1, 3]
+Temps d'exécution : 7.735517740249634
+[X] shymanovich-iryna 198[X]
+Nombre de matchs trouvés : 10
+[1, 0, 4]
+[11, 0, 1]
+Temps d'exécution : 7.072990417480469
+[X] jorge-francisca 199[X]
+Nombre de matchs trouvés : 10
+[]
+[]
+Temps d'exécution : 6.222721338272095
+[X] bjorklund-mirjam 200[X]
+Nombre de matchs trouvés : 10
+[1, 3, 5, 1, 1, 1, 3, 2]
+[6, 1, 3, 0, 2, 0, 0, 1]
+Taille : 200

@@ -19,23 +19,23 @@ driver_path = '/usr/local/bin/chromedriver'
 
 
 def retrieve_player_ranking_receiver_ladder(playername):
-    file = open("ladders/ladder_player_receiver.txt")
+    file = open("./ladders/ladder_player_receiver.txt")
     lines = file.readlines()
     for line in lines:
-        if line.__contains__(playername):
+        if line.split('-')[1].lower() in playername.lower():
             return line.split('-')[0]
 
 def retrieve_player_ranking_server_ladder(playername):
-    file = open("ladders/ladder_player_server.txt")
+    file = open("./ladders/ladder_player_server.txt")
     lines = file.readlines()
     for line in lines:
-        if line.__contains__(playername):
+        if line.split('-')[1].lower() in playername.lower():
             return line.split('-')[0]
 
 
 def parsing_db():
     #Open and read the original file
-    file = open("bdd_player_id_flashscore.txt", "r")
+    file = open("./drive/MyDrive/Projet_Elena/bdd_player_id_flashscore.txt", "r")
     lines = file.readlines()
     # Create a list of players
     players = []
@@ -97,13 +97,16 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
             soup = BeautifulSoup(response.text, 'html.parser')
 
         h3_elements = soup.find_all('h3')
-        for h3 in h3_elements:
-            array_players_current_match = h3.text.split('-')
-            if player_name.split('-')[0].lower() in array_players_current_match[0].lower():
-                is_player_home = True
-            else:
-                is_player_home = False
-        print(f"Le joueur est-il à domicile ? {is_player_home}")
+        h3 = h3_elements[0]
+        array_players_current_match = h3.text.split('-')
+        if player_name.split('-')[0].lower() in array_players_current_match[0].lower():
+            is_player_home = True
+            opponent_links.append(array_players_current_match[1].strip())
+        else:
+            is_player_home = False
+            opponent_links.append(array_players_current_match[0].strip())
+        #print(h3_elements[0])
+        #print(f"Le joueur est-il à domicile ? {is_player_home}")
 
 
         text_elements = soup.find_all(text=True)
@@ -118,17 +121,6 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
                     number_aces_opponent.append(int(text_list[i - 1]))
                 break
 
-        '''
-        for i in range(len(element_data_test_id)):
-            if element_data_test_id[i].text == "Aces":
-                if is_player_home:
-                    number_aces_player.append(int(element_data_test_id[i - 1].text))
-                    number_aces_opponent.append(int(element_data_test_id[i + 1].text))
-                else:
-                    number_aces_player.append(int(element_data_test_id[i + 1].text))
-                    number_aces_opponent.append(int(element_data_test_id[i - 1].text))
-        '''
-
     print(number_aces_player)
     print(number_aces_opponent)
 
@@ -138,8 +130,8 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     return [number_aces_player,number_aces_opponent, opponent_links]
 
 
-def build_ladder_atp_receiver():
-    file = open("./bdd_player_id_flashscore.txt", 'r')
+def build_ladder_atp_receiver(nb_person_ladder=300):
+    file = open("./drive/MyDrive/Projet_Elena/bdd_player_id_flashscore.txt", 'r')
     ladder_receiver = {}
     ladder_server = {}
 
@@ -158,32 +150,35 @@ def build_ladder_atp_receiver():
         result = retrieve_player_statsAce(name_player, id_player, driver)
         result_temp.append(result)
         iterator += 1
-        if iterator == 5  : break
+        if iterator == nb_person_ladder  : break
         print(f"Temps d'exécution : {time() - debut}")
     file.close()
 
     print(f'Taille : {len(result_temp)}')
-    file = open("./bdd_player_id_flashscore.txt", 'r')
+    file = open("./drive/MyDrive/Projet_Elena/bdd_player_id_flashscore.txt", 'r')
     lines = file.readlines()
     print(len(lines))
     ladder_receiver.clear()
     ladder_server.clear()
     for i in range(len(result_temp)):
-        ladder_receiver[lines[i].split('/')[2]] = sum(result_temp[i][1]) / len(result_temp[i][1])
-        ladder_server[lines[i].split('/')[2]] = sum(result_temp[i][0]) / len(result_temp[i][0])
+        if len(result_temp[i][0])==0:
+          continue
+        else:
+          ladder_server[lines[i].split('/')[2]] = sum(result_temp[i][0]) / len(result_temp[i][0])
+          ladder_receiver[lines[i].split('/')[2]] = sum(result_temp[i][1]) / len(result_temp[i][1])
     file.close()
 
     sorted_ladder_receiver = dict(sorted(ladder_receiver.items(), key=lambda item: item[1]))
     sorted_ladder_server = dict(sorted(ladder_server.items(), key=lambda item: item[1]))
 
-    file = open("ladders/ladder_player_receiver.txt", 'w')
+    file = open("./drive/MyDrive/Projet_Elena/ladder_player_receiver.txt", 'w')
     iterator = 1
     for key,value in sorted_ladder_receiver.items():
         file.write(f"{iterator}-{key}-{value}\n")
         iterator += 1
     file.close()
 
-    file = open("ladders/ladder_player_server.txt", 'w')
+    file = open("./drive/MyDrive/Projet_Elena/ladder_player_server.txt", 'w')
     iterator = 1
     for key,value in sorted_ladder_server.items():
         file.write(f"{iterator}-{key}-{value}\n")
@@ -194,6 +189,6 @@ def build_ladder_atp_receiver():
 
     print("*** DONE ALL ***")
 
-#print(retrieve_player_statsAce("cirstea-sorana", "fBPsm3Iq"))
-#build_ladder_atp_receiver()
-#print(retrieve_player_ranking_receiver_ladder("parry-diane"))
+#print(retrieve_player_statsAce("kalinskaya-anna", "KGdcQnEf"))
+#build_ladder_atp_receiver(200)
+#print(retrieve_player_ranking_receiver_ladder("Sakkari M. (Gre)"))

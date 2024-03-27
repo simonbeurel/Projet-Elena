@@ -15,14 +15,14 @@ for i in range(0, len(lines), 5):
     if len(array_aces_1)!=0:
         average_1 = sum(array_aces_1) / len(array_aces_1)
     else:
-        average_1 = -1
+        average_1 = 0
 
     array_aces_2 = lines[i + 3]
     array_aces_2 = eval(array_aces_2)
     if len(array_aces_2)!=0:
         average_2 = sum(array_aces_2) / len(array_aces_2)
     else:
-        average_2 = -2
+        average_2 = 0
 
     ladder_server[name_player] = average_1
     ladder_receiver[name_player] = average_2
