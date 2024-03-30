@@ -30,14 +30,14 @@ for i in range(0, len(lines), 5):
 sorted_ladder_server = dict(sorted(ladder_server.items(), key=lambda item: item[1]))
 sorted_ladder_receiver = dict(sorted(ladder_receiver.items(), key=lambda item: item[1]))
 
-file = open("ladders/ladder_player_receiver.txt", 'w')
+file = open("../ladders/ladder_player_receiver.txt", 'w')
 iterator = 1
 for key,value in sorted_ladder_receiver.items():
     file.write(f"{iterator}-{key}-{value}\n")
     iterator += 1
 file.close()
 
-file = open("ladders/ladder_player_server.txt", 'w')
+file = open("../ladders/ladder_player_server.txt", 'w')
 iterator = 1
 for key,value in sorted_ladder_server.items():
     file.write(f"{iterator}-{key}-{value}\n")

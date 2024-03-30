@@ -19,14 +19,14 @@ driver_path = '/usr/local/bin/chromedriver'
 
 
 def retrieve_player_ranking_receiver_ladder(playername):
-    file = open("./ladders/ladder_player_receiver.txt")
+    file = open("../ladders/ladder_player_receiver.txt")
     lines = file.readlines()
     for line in lines:
         if line.split('-')[1].lower() in playername.lower():
             return line.split('-')[0]
 
 def retrieve_player_ranking_server_ladder(playername):
-    file = open("./ladders/ladder_player_server.txt")
+    file = open("../ladders/ladder_player_server.txt")
     lines = file.readlines()
     for line in lines:
         if line.split('-')[1].lower() in playername.lower():
