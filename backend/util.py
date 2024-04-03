@@ -22,14 +22,14 @@ def retrieve_player_ranking_receiver_ladder(playername):
     file = open("../ladders/ladder_player_receiver.txt")
     lines = file.readlines()
     for line in lines:
-        if line.split('-')[1].lower() in playername.lower():
+        if line.split('-')[1].lower() == playername.lower().split(' ')[0]:
             return line.split('-')[0]
 
 def retrieve_player_ranking_server_ladder(playername):
     file = open("../ladders/ladder_player_server.txt")
     lines = file.readlines()
     for line in lines:
-        if line.split('-')[1].lower() in playername.lower():
+        if line.split('-')[1].lower() == playername.lower().split(' ')[0]:
             return line.split('-')[0]
 
 
