@@ -17,16 +17,15 @@ from bs4 import BeautifulSoup
 
 driver_path = '/usr/local/bin/chromedriver'
 
-
 def retrieve_player_ranking_receiver_ladder(playername):
-    file = open("../ladders/ladder_player_receiver.txt")
+    file = open("./ladders/ladder_player_receiver.txt")
     lines = file.readlines()
     for line in lines:
         if line.split('-')[1].lower() == playername.lower().split(' ')[0]:
             return line.split('-')[0]
 
 def retrieve_player_ranking_server_ladder(playername):
-    file = open("../ladders/ladder_player_server.txt")
+    file = open("./ladders/ladder_player_server.txt")
     lines = file.readlines()
     for line in lines:
         if line.split('-')[1].lower() == playername.lower().split(' ')[0]:
@@ -35,7 +34,7 @@ def retrieve_player_ranking_server_ladder(playername):
 
 def parsing_db():
     #Open and read the original file
-    file = open("./drive/MyDrive/Projet_Elena/bdd_player_id_flashscore.txt", "r")
+    file = open("./backend/bdd_player_id_flashscore.txt", "r")
     lines = file.readlines()
     # Create a list of players
     players = []
@@ -46,6 +45,11 @@ def parsing_db():
     return players
 
 
+def retrieve_player_id_from_lastname(last_name):
+    list = parsing_db()
+    for element in list:
+        if element.split("-")[0]==last_name:
+            return element.split("-")[-1]
 
 def retrieve_player_id(last_name, first_name):
     list = parsing_db()
@@ -58,6 +62,14 @@ def retrieve_player_id(last_name, first_name):
             nom_de_famille = element.split("-")[0]
         if element.split("-")[-2]==first_name and nom_de_famille==last_name:
             return element.split("-")[-1]
+
+def retrieve_player_fullname_from_id(player_id):
+    list = parsing_db()
+    for element in list:
+        if element.split("-")[-1]==player_id:
+            #return tous les éléments suaf le dernier
+            return "-".join(element.split("-")[:-1])
+
 
 
 def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
@@ -131,7 +143,7 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
 
 
 def build_ladder_atp_receiver(nb_person_ladder=300):
-    file = open("./drive/MyDrive/Projet_Elena/bdd_player_id_flashscore.txt", 'r')
+    file = open("./bdd_player_id_flashscore.txt", 'r')
     ladder_receiver = {}
     ladder_server = {}
 
@@ -155,7 +167,7 @@ def build_ladder_atp_receiver(nb_person_ladder=300):
     file.close()
 
     print(f'Taille : {len(result_temp)}')
-    file = open("./drive/MyDrive/Projet_Elena/bdd_player_id_flashscore.txt", 'r')
+    file = open("./bdd_player_id_flashscore.txt", 'r')
     lines = file.readlines()
     print(len(lines))
     ladder_receiver.clear()
@@ -171,14 +183,14 @@ def build_ladder_atp_receiver(nb_person_ladder=300):
     sorted_ladder_receiver = dict(sorted(ladder_receiver.items(), key=lambda item: item[1]))
     sorted_ladder_server = dict(sorted(ladder_server.items(), key=lambda item: item[1]))
 
-    file = open("./drive/MyDrive/Projet_Elena/ladder_player_receiver.txt", 'w')
+    file = open("./ladders/ladder_player_receiver.txt", 'w')
     iterator = 1
     for key,value in sorted_ladder_receiver.items():
         file.write(f"{iterator}-{key}-{value}\n")
         iterator += 1
     file.close()
 
-    file = open("./drive/MyDrive/Projet_Elena/ladder_player_server.txt", 'w')
+    file = open("./ladders/ladder_player_server.txt", 'w')
     iterator = 1
     for key,value in sorted_ladder_server.items():
         file.write(f"{iterator}-{key}-{value}\n")
@@ -192,3 +204,4 @@ def build_ladder_atp_receiver(nb_person_ladder=300):
 #print(retrieve_player_statsAce("kalinskaya-anna", "KGdcQnEf"))
 #build_ladder_atp_receiver(200)
 #print(retrieve_player_ranking_receiver_ladder("Sakkari M. (Gre)"))
+#print(retrieve_player_id_from_lastname("burel"))

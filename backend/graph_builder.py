@@ -3,8 +3,7 @@ The main goal of this file is to create graph
 '''
 import matplotlib.pyplot as plt
 import numpy as np
-from util import retrieve_player_statsAce, retrieve_player_ranking_receiver_ladder, retrieve_player_id, retrieve_player_ranking_server_ladder
-
+from backend.util import retrieve_player_ranking_receiver_ladder, retrieve_player_ranking_server_ladder, retrieve_player_statsAce
 
 def build_graph_aces_last_10_matches(array_aces, playername):
     moyenne = sum(array_aces) / len(array_aces)
@@ -14,7 +13,9 @@ def build_graph_aces_last_10_matches(array_aces, playername):
     plt.ylabel('Valeur')
     plt.title(f"Nombre d'aces sur les 10 derniers matchs de {playername}")
     plt.legend()
-    plt.show()
+    #plt.show()
+    plt.savefig('./static/aces_last_10_matches.png')
+    plt.close()
 
 def build_graph_aces_against_ranked_receiver(array_aces, array_opponents, playername, nameOpponent):
     print(array_opponents)
@@ -48,7 +49,9 @@ def build_graph_aces_against_ranked_receiver(array_aces, array_opponents, player
     print("Ranking de l'adversaire: ", ranking_opponent_target)
     print("Nombre d'aces attendus: ", aces_value)
 
-    plt.show()
+    #plt.show()
+    plt.savefig('./static/aces_against_ranked_receiver.png')
+    plt.close()
 
 
 def build_graph_receive_stats_last_10_matches(array_receive, playername):
@@ -59,7 +62,9 @@ def build_graph_receive_stats_last_10_matches(array_receive, playername):
     plt.ylabel('Valeur')
     plt.title(f"Nombre de d'aces pris sur les 10 derniers matchs de {playername}")
     plt.legend()
-    plt.show()
+    #plt.show()
+    plt.savefig('./static/receive_stats_last_10_matches.png')
+    plt.close()
 
 
 def build_graph_aces_against_ranked_server(array_receive, array_opponents, playername, nameOpponent):
@@ -94,23 +99,26 @@ def build_graph_aces_against_ranked_server(array_receive, array_opponents, playe
     print("Ranking de l'adversaire: ", ranking_opponent_target)
     print("Nombre d'aces attendus: ", aces_value)
 
-    plt.show()
+    #plt.show()
+    plt.savefig('./static/aces_against_ranked_server.png')
+    plt.close()
 
 
 
-playerName="azarenka-victoria"
-id_player = "neAp94aO"
-result = retrieve_player_statsAce(playerName,id_player)
+playerName="wozniacki-caroline"
+id_player = "SjM2LLB8"
+#result = retrieve_player_statsAce(playerName,id_player)
 '''PREDICTION AVERAGE ACES MIS'''
-build_graph_aces_last_10_matches(result[0][::-1], playerName)
+#build_graph_aces_last_10_matches(result[0][::-1], playerName)
 '''PREDICTION 1'''
-build_graph_aces_against_ranked_receiver(result[0][::-1], result[2][::-1], playerName, "Rybakina")
+#build_graph_aces_against_ranked_receiver(result[0][::-1], result[2][::-1], playerName, "kalinina")
 
 
-playerName="rybakina-elena"
-id_player = "UDzElXdm"
-result = retrieve_player_statsAce(playerName,id_player)
+
+playerName="kalinina-anhelina"
+id_player = "zNoTPac0"
+#result = retrieve_player_statsAce(playerName,id_player)
 '''PREDICTION AVERAGE ACES PRIS'''
-build_graph_receive_stats_last_10_matches(result[1][::-1], playerName)
+#build_graph_receive_stats_last_10_matches(result[1][::-1], playerName)
 '''PREDICTION 2'''
-build_graph_aces_against_ranked_server(result[1][::-1], result[2][::-1], playerName, "Azarenka")
+#build_graph_aces_against_ranked_server(result[1][::-1], result[2][::-1], playerName, "wozniacki")

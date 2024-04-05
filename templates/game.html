@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game</title>
+</head>
+<body>
+    <h1>Game</h1>
+    <p>Player 1 : {{ namePlayer1 }}</p>
+    <p>Player 2 : {{ namePlayer2 }}</p>
+    <img src="{{ url_for('static', filename='aces_against_ranked_receiver.png') }}">
+    <img src="{{ url_for('static', filename='aces_against_ranked_server.png') }}">
+    <img src="{{ url_for('static', filename='aces_last_10_matches.png') }}">
+    <img src="{{ url_for('static', filename='receive_stats_last_10_matches.png') }}">
+
+    <button onclick="window.location.href = '/';">Back</button>
+</body>
+</html>
