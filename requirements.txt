@@ -1,2 +1,5 @@
 selenium~=4.18.1
 flask
+requests
+bs4
+matplotlib
