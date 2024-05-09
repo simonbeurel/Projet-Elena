@@ -12,9 +12,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.firefox.options import Options
 
-from selenium.webdriver.firefox.service import Service as FirefoxService
-from webdriver_manager.firefox import GeckoDriverManager
-
 import requests
 from bs4 import BeautifulSoup
 
@@ -22,14 +19,12 @@ import argparse
 
 driver_path = '/usr/local/bin/chromedriver'
 
-
 def retrieve_player_ranking_receiver_ladder(playername):
     file = open("./ladders/ladder_player_receiver.txt")
     lines = file.readlines()
     for line in lines:
         if line.split('-')[1].lower() == playername.lower().split(' ')[0]:
             return line.split('-')[0]
-
 
 def retrieve_player_ranking_server_ladder(playername):
     file = open("./ladders/ladder_player_server.txt")
@@ -47,7 +42,7 @@ def parsing_db():
     players = []
     for line in lines:
         line = line.replace("\n", "").replace("\r", "")
-        players.append(line.split('/')[2] + "-" + line.split('/')[3])
+        players.append(line.split('/')[2]+"-"+line.split('/')[3])
     file.close()
     return players
 
@@ -55,9 +50,8 @@ def parsing_db():
 def retrieve_player_id_from_lastname(last_name):
     list = parsing_db()
     for element in list:
-        if element.split("-")[0] == last_name:
+        if element.split("-")[0]==last_name:
             return element.split("-")[-1]
-
 
 def retrieve_player_id(last_name, first_name):
     list = parsing_db()
@@ -68,16 +62,16 @@ def retrieve_player_id(last_name, first_name):
             nom_de_famille = " ".join(liste_nom)
         else:
             nom_de_famille = element.split("-")[0]
-        if element.split("-")[-2] == first_name and nom_de_famille == last_name:
+        if element.split("-")[-2]==first_name and nom_de_famille==last_name:
             return element.split("-")[-1]
-
 
 def retrieve_player_fullname_from_id(player_id):
     list = parsing_db()
     for element in list:
-        if element.split("-")[-1] == player_id:
+        if element.split("-")[-1]==player_id:
             #return tous les éléments suaf le dernier
             return "-".join(element.split("-")[:-1])
+
 
 
 def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
@@ -90,6 +84,7 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
         driver = webdriver.Firefox(options=options)
     else:
         driver = driver_arg
+
 
     url = f"https://www.flashscore.fr/joueur/{player_name}/{player_id}/"
     driver.get(url)
@@ -109,7 +104,7 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
 
         url = f"https://m.flashscore.fr/match/{id}/?t=statistiques-du-match"
         response = requests.get(url)
-        if response.status_code != 200:
+        if response.status_code!=200:
             print("ERROR GET URL")
             continue
         else:
@@ -126,6 +121,7 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
             opponent_links.append(array_players_current_match[0].strip())
         #print(h3_elements[0])
         #print(f"Le joueur est-il à domicile ? {is_player_home}")
+
 
         text_elements = soup.find_all(text=True)
         text_list = [text.strip() for text in text_elements if text.strip()]
@@ -145,7 +141,7 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     if driver_arg is None:
         driver.close()
 
-    return [number_aces_player, number_aces_opponent, opponent_links]
+    return [number_aces_player,number_aces_opponent, opponent_links]
 
 
 def build_ladders_wta(nb_person_ladder=300):
@@ -155,7 +151,7 @@ def build_ladders_wta(nb_person_ladder=300):
 
     options = Options()
     options.add_argument("--headless")
-    driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()), options=options)
+    driver = webdriver.Firefox(options=options)
 
     result_temp = []
 
@@ -168,7 +164,7 @@ def build_ladders_wta(nb_person_ladder=300):
         result = retrieve_player_statsAce(name_player, id_player, driver)
         result_temp.append(result)
         iterator += 1
-        if iterator == nb_person_ladder: break
+        if iterator == nb_person_ladder  : break
         print(f"Temps d'exécution : {time() - debut}")
     file.close()
 
@@ -179,11 +175,11 @@ def build_ladders_wta(nb_person_ladder=300):
     ladder_receiver.clear()
     ladder_server.clear()
     for i in range(len(result_temp)):
-        if len(result_temp[i][0]) == 0:
-            continue
+        if len(result_temp[i][0])==0:
+          continue
         else:
-            ladder_server[lines[i].split('/')[2]] = sum(result_temp[i][0]) / len(result_temp[i][0])
-            ladder_receiver[lines[i].split('/')[2]] = sum(result_temp[i][1]) / len(result_temp[i][1])
+          ladder_server[lines[i].split('/')[2]] = sum(result_temp[i][0]) / len(result_temp[i][0])
+          ladder_receiver[lines[i].split('/')[2]] = sum(result_temp[i][1]) / len(result_temp[i][1])
     file.close()
 
     sorted_ladder_receiver = dict(sorted(ladder_receiver.items(), key=lambda item: item[1]))
@@ -192,7 +188,7 @@ def build_ladders_wta(nb_person_ladder=300):
     file = open("./ladders/ladder_player_receiver.txt", 'w')
     iterator = 1
     file.write(f"[+] Last modification: {datetime.datetime.now()} [+]\n")
-    for key, value in sorted_ladder_receiver.items():
+    for key,value in sorted_ladder_receiver.items():
         file.write(f"{iterator}-{key}-{value}\n")
         iterator += 1
     file.close()
@@ -200,7 +196,7 @@ def build_ladders_wta(nb_person_ladder=300):
     file = open("./ladders/ladder_player_server.txt", 'w')
     iterator = 1
     file.write(f"[+] Last modification: {datetime.datetime.now()} [+]\n")
-    for key, value in sorted_ladder_server.items():
+    for key,value in sorted_ladder_server.items():
         file.write(f"{iterator}-{key}-{value}\n")
         iterator += 1
     file.close()
@@ -208,7 +204,6 @@ def build_ladders_wta(nb_person_ladder=300):
     driver.close()
 
     print("*** DONE ALL ***")
-
 
 #print(retrieve_player_statsAce("kalinskaya-anna", "KGdcQnEf"))
 #build_ladder_atp_receiver(200)
