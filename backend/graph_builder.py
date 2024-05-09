@@ -11,7 +11,7 @@ def build_graph_aces_last_10_matches(array_aces, playername):
     plt.axhline(y=moyenne, color='r', linestyle='--', label=f'Moyenne: {moyenne}')
     plt.xlabel('Index')
     plt.ylabel('Valeur')
-    plt.title(f"Nombre d'aces sur les 10 derniers matchs de {playername}")
+    plt.title(f"Nombre d'aces mis sur les 10 derniers matchs de {playername}")
     plt.legend()
     #plt.show()
     plt.savefig('./static/aces_last_10_matches.png')
@@ -40,7 +40,7 @@ def build_graph_aces_against_ranked_receiver(array_aces, array_opponents, player
 
     ranking_opponent_target = retrieve_player_ranking_receiver_ladder(nameOpponent)
     plt.plot(array_rankings_opponents, array_aces, marker='o', linestyle='-')
-    plt.title(f"Nombre d'aces de {playername} en fonction du rank de l'adversaire")
+    plt.title(f"Nombre d'aces de {playername} mis en fonction du rank de l'adversaire")
     plt.xlabel("Rank de l'adversaire")
     plt.ylabel("Nombre d'aces")
     aces_value = np.interp(ranking_opponent_target, array_rankings_opponents, array_aces)
@@ -90,7 +90,7 @@ def build_graph_aces_against_ranked_server(array_receive, array_opponents, playe
 
     ranking_opponent_target = retrieve_player_ranking_server_ladder(nameOpponent)
     plt.plot(array_rankings_opponents, array_receive, marker='o', linestyle='-')
-    plt.title(f"Nombre d'aces de {playername} en fonction du rank de l'adversaire")
+    plt.title(f"Nombre d'aces de {playername} pris en fonction du rank de l'adversaire")
     plt.xlabel("Rank de l'adversaire")
     plt.ylabel("Nombre d'aces")
     aces_value = np.interp(ranking_opponent_target, array_rankings_opponents, array_receive)

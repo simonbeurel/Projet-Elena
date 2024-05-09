@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Bienvenue sur le projet Elena ! </h1>
+    <p>SI CEST UN NOM DE FAMILLE COMPOSE => SEULEMENT LE PREMIER BOUT DU NOM DE FAMILLE</p>
+    <p>Veuillez rentrer le nom de la première joueuse :</p>
+    <input type="text" name="namePlayer1" id="namePlayer1">
+    <p>Veuillez rentrer le nom de la deuxième joueuse :</p>
+    <input type="text" name="namePlayer2" id="namePlayer2">
+    <button id="submitPlayers">Valider</button>
+
+    <script>
+        document.getElementById('submitPlayers').addEventListener('click', function() {
+            var namePlayer1 = document.getElementById('namePlayer1').value;
+            var namePlayer2 = document.getElementById('namePlayer2').value;
+            window.location.href = '/game/' + namePlayer1 + '/' + namePlayer2;
+        });
+    </script>
+</body>
+</html>
