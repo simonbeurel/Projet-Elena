@@ -2,6 +2,7 @@
 The goal of this file is to define some useful functions for our DB
 '''
 from time import sleep, time
+import datetime
 
 from selenium import webdriver
 from selenium.common import TimeoutException
@@ -14,6 +15,7 @@ from selenium.webdriver.firefox.options import Options
 import requests
 from bs4 import BeautifulSoup
 
+import argparse
 
 driver_path = '/usr/local/bin/chromedriver'
 
@@ -142,8 +144,8 @@ def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
     return [number_aces_player,number_aces_opponent, opponent_links]
 
 
-def build_ladder_atp_receiver(nb_person_ladder=300):
-    file = open("./bdd_player_id_flashscore.txt", 'r')
+def build_ladders_wta(nb_person_ladder=300):
+    file = open("./backend/bdd_player_id_flashscore.txt", 'r')
     ladder_receiver = {}
     ladder_server = {}
 
@@ -167,7 +169,7 @@ def build_ladder_atp_receiver(nb_person_ladder=300):
     file.close()
 
     print(f'Taille : {len(result_temp)}')
-    file = open("./bdd_player_id_flashscore.txt", 'r')
+    file = open("./backend/bdd_player_id_flashscore.txt", 'r')
     lines = file.readlines()
     print(len(lines))
     ladder_receiver.clear()
@@ -185,6 +187,7 @@ def build_ladder_atp_receiver(nb_person_ladder=300):
 
     file = open("./ladders/ladder_player_receiver.txt", 'w')
     iterator = 1
+    file.write(f"[+] Last modification: {datetime.datetime.now()} [+]\n")
     for key,value in sorted_ladder_receiver.items():
         file.write(f"{iterator}-{key}-{value}\n")
         iterator += 1
@@ -192,6 +195,7 @@ def build_ladder_atp_receiver(nb_person_ladder=300):
 
     file = open("./ladders/ladder_player_server.txt", 'w')
     iterator = 1
+    file.write(f"[+] Last modification: {datetime.datetime.now()} [+]\n")
     for key,value in sorted_ladder_server.items():
         file.write(f"{iterator}-{key}-{value}\n")
         iterator += 1
@@ -205,3 +209,10 @@ def build_ladder_atp_receiver(nb_person_ladder=300):
 #build_ladder_atp_receiver(200)
 #print(retrieve_player_ranking_receiver_ladder("Sakkari M. (Gre)"))
 #print(retrieve_player_id_from_lastname("burel"))
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser.add_argument('--size', type=int, help='The ladder length to build')
+    args = parser.parse_args()
+    build_ladders_wta(args.size)
