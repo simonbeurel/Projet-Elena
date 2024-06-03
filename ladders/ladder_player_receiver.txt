@@ -1,4 +1,4 @@
-[+] Last modification: <class 'datetime.datetime'> [+]
-1-gauff-coco-1.0
-2-swiatek-iga-2.4
-3-sabalenka-aryna-4.1
+[+] Last modification: 2024-06-03 06:20:48.355988 [+]
+1-gauff-coco-1.7
+2-sabalenka-aryna-1.9
+3-swiatek-iga-2.7
