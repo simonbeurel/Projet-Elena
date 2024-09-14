@@ -2,6 +2,6 @@
 
 while true 
 do
-	python3 backend/util.py --size 4
+	python3 backend/util.py --size 500
 	sleep 15
 done
