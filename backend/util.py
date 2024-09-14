@@ -137,6 +137,7 @@ def build_ladders_wta(nb_person_ladder=300):
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
         driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
+        driver.set_page_load_timeout(100)
 
         result_temp = []
 
