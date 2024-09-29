@@ -1,5 +1,7 @@
 selenium~=4.18.1
-flask
-requests
-bs4
-matplotlib
+flask~=3.0.2
+requests~=2.31.0
+bs4~=0.0.1
+matplotlib~=3.8.3
+beautifulsoup4~=4.12.2
+numpy~=1.26.0

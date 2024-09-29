@@ -3,8 +3,8 @@ The main goal of this file is to create graph
 '''
 import matplotlib.pyplot as plt
 import numpy as np
-from backend.util import retrieve_player_ranking_receiver_ladder, retrieve_player_ranking_server_ladder, retrieve_player_statsAce
-
+from util import retrieve_player_ranking_receiver_ladder, retrieve_player_ranking_server_ladder, retrieve_player_statsAce
+import argparse
 def build_graph_aces_last_10_matches(array_aces, playername):
     moyenne = sum(array_aces) / len(array_aces)
     plt.plot(range(len(array_aces)), array_aces, marker='o', linestyle='-')
@@ -104,21 +104,26 @@ def build_graph_aces_against_ranked_server(array_receive, array_opponents, playe
     plt.close()
 
 
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--p1', type=str, required=True)
+    parser.add_argument('--id1', type=str, required=True)
+    parser.add_argument('--p2', type=str, required=True)
+    parser.add_argument('--id2', type=str, required=True)
+    args = parser.parse_args()
 
-playerName="wozniacki-caroline"
-id_player = "SjM2LLB8"
-#result = retrieve_player_statsAce(playerName,id_player)
-'''PREDICTION AVERAGE ACES MIS'''
-#build_graph_aces_last_10_matches(result[0][::-1], playerName)
-'''PREDICTION 1'''
-#build_graph_aces_against_ranked_receiver(result[0][::-1], result[2][::-1], playerName, "kalinina")
+    playerName = args.p1
+    id_player = args.id1
+    result = retrieve_player_statsAce(playerName, id_player)
+    '''PREDICTION AVERAGE ACES MIS'''
+    build_graph_aces_last_10_matches(result[0][::-1], playerName)
+    '''PREDICTION 1'''
+    build_graph_aces_against_ranked_receiver(result[0][::-1], result[2][::-1], playerName, args.p2.split('-')[0])
 
-
-
-playerName="kalinina-anhelina"
-id_player = "zNoTPac0"
-#result = retrieve_player_statsAce(playerName,id_player)
-'''PREDICTION AVERAGE ACES PRIS'''
-#build_graph_receive_stats_last_10_matches(result[1][::-1], playerName)
-'''PREDICTION 2'''
-#build_graph_aces_against_ranked_server(result[1][::-1], result[2][::-1], playerName, "wozniacki")
+    playerName = args.p2
+    id_player = args.id2
+    result = retrieve_player_statsAce(playerName, id_player)
+    '''PREDICTION AVERAGE ACES PRIS'''
+    build_graph_receive_stats_last_10_matches(result[1][::-1], playerName)
+    '''PREDICTION 2'''
+    build_graph_aces_against_ranked_server(result[1][::-1], result[2][::-1], playerName, args.p1.split('-')[0])
