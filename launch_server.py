@@ -3,6 +3,9 @@ from flask import render_template
 
 from backend import util, graph_builder
 
+import matplotlib.pyplot as plt
+import numpy as np
+
 
 app = Flask(__name__)
 
@@ -24,16 +27,25 @@ def game_page(namePlayer1, namePlayer2):
 
 
     result = util.retrieve_player_statsAce(full_name_1, elo_1)
+    average_aces_player1 = sum(result[0]) / len(result[0])
     graph_builder.build_graph_aces_last_10_matches(result[0][::-1], full_name_1)
-    graph_builder.build_graph_aces_against_ranked_receiver(result[0][::-1], result[2][::-1], full_name_1, str(namePlayer2).lower())
+    prediction_one = graph_builder.build_graph_aces_against_ranked_receiver(result[0][::-1], result[2][::-1], full_name_1, str(namePlayer2).lower())
+
 
     result = util.retrieve_player_statsAce(full_name_2, elo_2)
+    average_aces_player2 = sum(result[1]) / len(result[1])
     graph_builder.build_graph_receive_stats_last_10_matches(result[1][::-1], full_name_2)
-    graph_builder.build_graph_aces_against_ranked_server(result[1][::-1], result[2][::-1], full_name_2, str(namePlayer1).lower())
+    prediction_two = graph_builder.build_graph_aces_against_ranked_server(result[1][::-1], result[2][::-1], full_name_2, str(namePlayer1).lower())
+
 
     return render_template('game.html',
                            namePlayer1=full_name_1,
-                           namePlayer2=full_name_2)
+                           namePlayer2=full_name_2,
+                           aces_mis_avg=average_aces_player1,
+                           aces_pris_avg=average_aces_player2,
+                           prediction1 = prediction_one,
+                           prediction2 = prediction_two
+                           )
 
 
 

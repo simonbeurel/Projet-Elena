@@ -53,6 +53,8 @@ def build_graph_aces_against_ranked_receiver(array_aces, array_opponents, player
     plt.savefig('./static/aces_against_ranked_receiver.png')
     plt.close()
 
+    return aces_value
+
 
 def build_graph_receive_stats_last_10_matches(array_receive, playername):
     moyenne = sum(array_receive) / len(array_receive)
@@ -102,6 +104,8 @@ def build_graph_aces_against_ranked_server(array_receive, array_opponents, playe
     #plt.show()
     plt.savefig('./static/aces_against_ranked_server.png')
     plt.close()
+
+    return aces_value
 
 
 if __name__ == '__main__':
