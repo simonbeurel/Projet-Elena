@@ -7,6 +7,12 @@ from bs4 import BeautifulSoup
 
 import argparse
 
+from pymongo import MongoClient
+
+client = MongoClient("mongodb://root:example@localhost:27017/")
+db = client["tennis_db"]
+collection = db["joueurs"]
+
 def retrieve_player_ranking_receiver_ladder(playername):
     with open("./ladders/ladder_player_receiver.txt") as file:
         lines = file.readlines()
@@ -166,6 +172,28 @@ def build_ladders_wta(nb_person_ladder=300):
             iterator += 1
 
     print("*** DONE ALL ***")
+
+
+
+def get_id_from_name_mongo(nom_prenom: str) -> str | None:
+    """
+    Retourne l'ID du joueur à partir de son nom complet.
+    Exemple: "swiatek iga" -> "jNyZsXZe"
+    """
+    joueur = collection.find_one({"nom_prenom": nom_prenom.lower()})
+    if joueur:
+        return joueur["joueur_id"]
+    return None
+
+def get_name_from_id_mongo(joueur_id: str) -> str | None:
+    """
+    Retourne le nom complet du joueur à partir de son ID.
+    Exemple: "jNyZsXZe" -> "swiatek iga"
+    """
+    joueur = collection.find_one({"joueur_id": joueur_id})
+    if joueur:
+        return joueur["nom_prenom"]
+    return None
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process some integers.')
