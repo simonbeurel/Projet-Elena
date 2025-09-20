@@ -75,6 +75,10 @@ def retrieve_player_statsAce(player_name, player_id):
         for match_id in id_matches:
             is_player_home = False
 
+            print(f"Match id: {match_id} // Url check: https://m.flashscore.fr/match/{match_id}/?t=statistiques-du-match")
+
+            #https://www.flashscore.fr/match/tennis/anisimova-amanda-nwkutKbi/swiatek-iga-jNyZsXZe/resume/stats/0/?mid=lvMNSUfB
+            
             url = f"https://m.flashscore.fr/match/{match_id}/?t=statistiques-du-match"
             response = requests.get(url)
             if response.status_code != 200:

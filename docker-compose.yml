@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: my_mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db   # volume persistant
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+  app:
+    image: elena_server:latest   # ton image buildée
+    container_name: elena_app
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - "5000:5000"           # adapte si besoin
+    environment:
+      MONGO_URI: "mongodb://root:example@mongo:27017/"
+
+volumes:
+  mongo_data:   # volume déclaré
