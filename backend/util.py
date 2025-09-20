@@ -1,22 +1,11 @@
 from time import sleep, time
 import datetime
 
-from selenium import webdriver
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-
+from playwright.sync_api import sync_playwright
 import requests
 from bs4 import BeautifulSoup
 
 import argparse
-
-driver_path = '/usr/local/bin/chromedriver'
 
 def retrieve_player_ranking_receiver_ladder(playername):
     with open("./ladders/ladder_player_receiver.txt") as file:
@@ -33,14 +22,14 @@ def retrieve_player_ranking_server_ladder(playername):
                 return line.split('-')[0]
 
 def parsing_db():
-    #Open and read the original file
+    # Open and read the original file
     with open("./backend/bdd_player_id_flashscore.txt", "r") as file:
         lines = file.readlines()
         # Create a list of players
         players = []
         for line in lines:
             line = line.replace("\n", "").replace("\r", "")
-            players.append(line.split('/')[2]+"-"+line.split('/')[3])
+            players.append(line.split('/')[2] + "-" + line.split('/')[3])
     return players
 
 def retrieve_player_id_from_lastname(last_name):
@@ -63,67 +52,63 @@ def retrieve_player_fullname_from_id(player_id):
         if player.split("-")[-1] == player_id:
             return "-".join(player.split("-")[:-1])
 
-def retrieve_player_statsAce(player_name, player_id, driver_arg=None):
-    if driver_arg is None:
-        options = Options()
-        options.add_argument("--headless")
-        options.add_argument('--no-sandbox')
-        options.add_argument('--disable-dev-shm-usage')
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-    else:
-        driver = driver_arg
+def retrieve_player_statsAce(player_name, player_id):
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        context = browser.new_context()
+        page = context.new_page()
 
-    url = f"https://www.flashscore.fr/joueur/{player_name}/{player_id}/"
-    driver.get(url)
+        url = f"https://www.flashscore.fr/joueur/{player_name}/{player_id}/"
+        page.goto(url)
 
-    elems = driver.find_elements(By.CLASS_NAME, "event__match")
-    print(f"Nombre de matchs trouvés : {len(elems)}")
+        elems = page.locator(".event__match")
+        print(f"Nombre de matchs trouvés : {elems.count()}")
 
-    id_matches = []
-    number_aces_player = []
-    number_aces_opponent = []
-    opponent_links = []
-    for elem in elems:
-        id_matches.append(elem.get_attribute("id")[4:])
+        id_matches = []
+        number_aces_player = []
+        number_aces_opponent = []
+        opponent_links = []
 
-    for match_id in id_matches:
-        is_player_home = False
+        for i in range(elems.count()):
+            id_matches.append(elems.nth(i).get_attribute("id")[4:])
 
-        url = f"https://m.flashscore.fr/match/{match_id}/?t=statistiques-du-match"
-        response = requests.get(url)
-        if response.status_code != 200:
-            print("ERROR GET URL")
-            continue
-        else:
-            soup = BeautifulSoup(response.text, 'html.parser')
-
-        h3_elements = soup.find_all('h3')
-        h3 = h3_elements[0]
-        array_players_current_match = h3.text.split('-')
-        if player_name.split('-')[0].lower() in array_players_current_match[0].lower():
-            is_player_home = True
-            opponent_links.append(array_players_current_match[1].strip())
-        else:
+        for match_id in id_matches:
             is_player_home = False
-            opponent_links.append(array_players_current_match[0].strip())
 
-        text_elements = soup.find_all(text=True)
-        text_list = [text.strip() for text in text_elements if text.strip()]
-        for i in range(len(text_list)):
-            if text_list[i] == "Aces":
-                if is_player_home:
-                    number_aces_player.append(int(text_list[i - 1]))
-                    number_aces_opponent.append(int(text_list[i + 1]))
-                else:
-                    number_aces_player.append(int(text_list[i + 1]))
-                    number_aces_opponent.append(int(text_list[i - 1]))
-                break
+            url = f"https://m.flashscore.fr/match/{match_id}/?t=statistiques-du-match"
+            response = requests.get(url)
+            if response.status_code != 200:
+                print("ERROR GET URL")
+                continue
+            else:
+                soup = BeautifulSoup(response.text, 'html.parser')
 
-    print(number_aces_player)
-    print(number_aces_opponent)
+            h3_elements = soup.find_all('h3')
+            h3 = h3_elements[0]
+            array_players_current_match = h3.text.split('-')
+            if player_name.split('-')[0].lower() in array_players_current_match[0].lower():
+                is_player_home = True
+                opponent_links.append(array_players_current_match[1].strip())
+            else:
+                is_player_home = False
+                opponent_links.append(array_players_current_match[0].strip())
 
-    if driver_arg is None:
-        driver.close()
+            text_elements = soup.find_all(text=True)
+            text_list = [text.strip() for text in text_elements if text.strip()]
+            for i in range(len(text_list)):
+                if text_list[i] == "Aces":
+                    if is_player_home:
+                        number_aces_player.append(int(text_list[i - 1]))
+                        number_aces_opponent.append(int(text_list[i + 1]))
+                    else:
+                        number_aces_player.append(int(text_list[i + 1]))
+                        number_aces_opponent.append(int(text_list[i - 1]))
+                    break
+
+        print(number_aces_player)
+        print(number_aces_opponent)
+
+        browser.close()
 
     return [number_aces_player, number_aces_opponent, opponent_links]
 
@@ -131,13 +116,6 @@ def build_ladders_wta(nb_person_ladder=300):
     with open("./backend/bdd_player_id_flashscore.txt", 'r') as file:
         ladder_receiver = {}
         ladder_server = {}
-
-        options = Options()
-        options.add_argument("--headless")
-        options.add_argument('--no-sandbox')
-        options.add_argument('--disable-dev-shm-usage')
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-        driver.set_page_load_timeout(100)
 
         result_temp = []
 
@@ -147,7 +125,7 @@ def build_ladders_wta(nb_person_ladder=300):
             name_player = line.split('/')[2]
             id_player = line.split('/')[3]
             print(f'[X] {name_player} {iterator}[X]')
-            result = retrieve_player_statsAce(name_player, id_player, driver)
+            result = retrieve_player_statsAce(name_player, id_player)
             result_temp.append(result)
             iterator += 1
             if iterator == nb_person_ladder: break
@@ -182,8 +160,6 @@ def build_ladders_wta(nb_person_ladder=300):
         for key, value in sorted_ladder_server.items():
             file.write(f"{iterator}-{key}-{value}\n")
             iterator += 1
-
-    driver.close()
 
     print("*** DONE ALL ***")
 

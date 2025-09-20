@@ -6,8 +6,10 @@
 </head>
 <body>
     <h1>Game</h1>
-    <p>Player 1 : {{ namePlayer1 }}</p>
-    <p>Player 2 : {{ namePlayer2 }}</p>
+    <p>Player 1 : {{ namePlayer1 }} a mis en moyenne {{aces_mis_avg}} aces sur les 10 derniers matchs</p>
+    <p>Player 2 : {{ namePlayer2 }} a pris en moyenne {{aces_pris_avg}} aces sur les 10 derniers matchs</p>
+    <p>Prediction 1: {{prediction1}}</p>
+    <p>Prediction 2: {{prediction2}}</p>
     <img src="{{ url_for('static', filename='aces_against_ranked_receiver.png') }}">
     <img src="{{ url_for('static', filename='aces_against_ranked_server.png') }}">
     <img src="{{ url_for('static', filename='aces_last_10_matches.png') }}">
@@ -16,3 +18,7 @@
     <button onclick="window.location.href = '/';">Back</button>
 </body>
 </html>
+
+<!--TODO a rajouter: Nombres aces mis / Nombres aces pris (oppon) / Prédiction 1 / Prédiction 2-->
+<!--TODO a rajouter: Meilleure visualisation des datas, faire deux pages pour éviter de faire un par 1 (ou un bouton pr relance?)-->
+<!--TODO a rajouter: Faire un troisième type de page pour pouvoir faire un profil des joueuses-->

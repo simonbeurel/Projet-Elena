@@ -3,7 +3,7 @@ The main goal of this file is to create graph
 '''
 import matplotlib.pyplot as plt
 import numpy as np
-from util import retrieve_player_ranking_receiver_ladder, retrieve_player_ranking_server_ladder, retrieve_player_statsAce
+from backend.util import retrieve_player_ranking_receiver_ladder, retrieve_player_ranking_server_ladder, retrieve_player_statsAce
 import argparse
 def build_graph_aces_last_10_matches(array_aces, playername):
     moyenne = sum(array_aces) / len(array_aces)
@@ -52,6 +52,8 @@ def build_graph_aces_against_ranked_receiver(array_aces, array_opponents, player
     #plt.show()
     plt.savefig('./static/aces_against_ranked_receiver.png')
     plt.close()
+
+    return aces_value
 
 
 def build_graph_receive_stats_last_10_matches(array_receive, playername):
@@ -102,6 +104,8 @@ def build_graph_aces_against_ranked_server(array_receive, array_opponents, playe
     #plt.show()
     plt.savefig('./static/aces_against_ranked_server.png')
     plt.close()
+
+    return aces_value
 
 
 if __name__ == '__main__':
