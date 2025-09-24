@@ -24,8 +24,4 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install selenium
 RUN pip install webdriver-manager
-# Exposer le port sur lequel le serveur Flask écoute
-EXPOSE 5000
-
-# Commande pour lancer le serveur Flask
-CMD ["python", "launch_server.py"]
+RUN playwright install --with-deps
