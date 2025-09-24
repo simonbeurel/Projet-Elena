@@ -75,18 +75,56 @@ def retrieve_player_statsAce(player_name, player_id):
         for match_id in id_matches:
             is_player_home = False
 
-            print(f"Match id: {match_id} // Url check: https://m.flashscore.fr/match/{match_id}/?t=statistiques-du-match")
+            #print(f"Match id: {match_id} // Url check: https://m.flashscore.fr/match/{match_id}/?t=stats")
 
             #https://www.flashscore.fr/match/tennis/anisimova-amanda-nwkutKbi/swiatek-iga-jNyZsXZe/resume/stats/0/?mid=lvMNSUfB
             
-            url = f"https://m.flashscore.fr/match/{match_id}/?t=statistiques-du-match"
-            response = requests.get(url)
+            url = f"https://m.flashscore.fr/match/{match_id}/?t=stats"
+            headers = {
+                "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+                            "(KHTML, like Gecko) Chrome/123 Safari/537.36"
+            }
+            response = requests.get(url, headers=headers)
             if response.status_code != 200:
                 print("ERROR GET URL")
                 continue
             else:
                 soup = BeautifulSoup(response.text, 'html.parser')
 
+            div = soup.find("div", {
+                "class": "wcl-row_2oCpS statisticsMobi",
+                "data-testid": "wcl-statistics"
+            })
+            tableau = []
+            if div:
+                raw_text = div.get_text(separator="\n", strip=True)
+                lines = raw_text.split("\n")
+                for item in lines:
+                    if item.isdigit():
+                        tableau.append(int(item))
+                    else:
+                        tableau.append(item)
+            else:
+                print("Div non trouvée dans le HTML reçu")
+                continue
+
+            links = soup.find_all("a", class_="web-link-external")
+            resultats = []
+            for link in links:
+                texte = link.get_text(strip=True)   
+                href = link.get("href")             
+                resultats.append({"texte": texte, "href": href})
+
+            if player_id in resultats[0]['href']:
+                is_player_home = True
+                number_aces_player.append(tableau[0])
+                number_aces_opponent.append(tableau[2])
+            else:
+                is_player_home = False
+                number_aces_player.append(tableau[2])
+                number_aces_opponent.append(tableau[0])
+            
+            '''
             h3_elements = soup.find_all('h3')
             h3 = h3_elements[0]
             array_players_current_match = h3.text.split('-')
@@ -108,6 +146,7 @@ def retrieve_player_statsAce(player_name, player_id):
                         number_aces_player.append(int(text_list[i + 1]))
                         number_aces_opponent.append(int(text_list[i - 1]))
                     break
+            '''
 
         print(number_aces_player)
         print(number_aces_opponent)

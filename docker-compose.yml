@@ -14,13 +14,25 @@ services:
       MONGO_INITDB_ROOT_PASSWORD: example
 
   app:
-    image: elena_server:latest   # ton image buildée
+    build: .                  
+    image: elena_server:latest 
     container_name: elena_app
     restart: always
     depends_on:
       - mongo
+    command: ["python", "launch_server.py"]
     ports:
-      - "5000:5000"           # adapte si besoin
+      - "5000:5000"
+    environment:
+      MONGO_URI: "mongodb://root:example@mongo:27017/"
+
+  worker:
+    image: elena_server:latest 
+    container_name: elena_scrapper
+    restart: always
+    depends_on:
+      - mongo
+    command: ["python3", "backend/util.py", "--size", "500"]
     environment:
       MONGO_URI: "mongodb://root:example@mongo:27017/"
 
