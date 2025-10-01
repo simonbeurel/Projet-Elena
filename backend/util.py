@@ -12,6 +12,8 @@ from pymongo import MongoClient
 client = MongoClient("mongodb://root:example@localhost:27017/")
 db = client["tennis_db"]
 collection = db["joueurs"]
+collection_ladder_server = db["ladder_server"]
+collection_ladder_receiver = db["ladder_receiver"]
 
 def retrieve_player_ranking_receiver_ladder(playername):
     with open("./ladders/ladder_player_receiver.txt") as file:
@@ -130,30 +132,6 @@ def retrieve_player_statsAce(player_name, player_id):
                 number_aces_player.append(tableau[2])
                 number_aces_opponent.append(tableau[0])
             
-            '''
-            h3_elements = soup.find_all('h3')
-            h3 = h3_elements[0]
-            array_players_current_match = h3.text.split('-')
-            if player_name.split('-')[0].lower() in array_players_current_match[0].lower():
-                is_player_home = True
-                opponent_links.append(array_players_current_match[1].strip())
-            else:
-                is_player_home = False
-                opponent_links.append(array_players_current_match[0].strip())
-
-            text_elements = soup.find_all(text=True)
-            text_list = [text.strip() for text in text_elements if text.strip()]
-            for i in range(len(text_list)):
-                if text_list[i] == "Aces":
-                    if is_player_home:
-                        number_aces_player.append(int(text_list[i - 1]))
-                        number_aces_opponent.append(int(text_list[i + 1]))
-                    else:
-                        number_aces_player.append(int(text_list[i + 1]))
-                        number_aces_opponent.append(int(text_list[i - 1]))
-                    break
-            '''
-
         print(number_aces_player)
         print(number_aces_opponent)
 
@@ -161,54 +139,18 @@ def retrieve_player_statsAce(player_name, player_id):
 
     return [number_aces_player, number_aces_opponent, opponent_links]
 
-def build_ladders_wta(nb_person_ladder=300):
-    with open("./backend/bdd_player_id_flashscore.txt", 'r') as file:
-        ladder_receiver = {}
-        ladder_server = {}
-
-        result_temp = []
-
-        iterator = 1
-        for line in file.readlines():
-            debut = time()
-            name_player = line.split('/')[2]
-            id_player = line.split('/')[3]
-            print(f'[X] {name_player} {iterator}[X]')
-            result = retrieve_player_statsAce(name_player, id_player)
-            result_temp.append(result)
-            iterator += 1
-            if iterator == nb_person_ladder: break
-            print(f"Temps d'exécution : {time() - debut}")
-
-    print(f'Taille : {len(result_temp)}')
-    with open("./backend/bdd_player_id_flashscore.txt", 'r') as file:
-        lines = file.readlines()
-        print(len(lines))
-        ladder_receiver.clear()
-        ladder_server.clear()
-        for i in range(len(result_temp)):
-            if len(result_temp[i][0]) == 0:
-                continue
-            else:
-                ladder_server[lines[i].split('/')[2]] = sum(result_temp[i][0]) / len(result_temp[i][0])
-                ladder_receiver[lines[i].split('/')[2]] = sum(result_temp[i][1]) / len(result_temp[i][1])
-
-    sorted_ladder_receiver = dict(sorted(ladder_receiver.items(), key=lambda item: item[1]))
-    sorted_ladder_server = dict(sorted(ladder_server.items(), key=lambda item: item[1]))
-
-    with open("./ladders/ladder_player_receiver.txt", 'w') as file:
-        iterator = 1
-        file.write(f"[+] Last modification: {datetime.datetime.now()} [+]\n")
-        for key, value in sorted_ladder_receiver.items():
-            file.write(f"{iterator}-{key}-{value}\n")
-            iterator += 1
-
-    with open("./ladders/ladder_player_server.txt", 'w') as file:
-        iterator = 1
-        file.write(f"[+] Last modification: {datetime.datetime.now()} [+]\n")
-        for key, value in sorted_ladder_server.items():
-            file.write(f"{iterator}-{key}-{value}\n")
-            iterator += 1
+def update_player_db_stats(nb_person_ladder=300):
+   
+    for player in collection.find().limit(nb_person_ladder):
+        name_player = player["nom_prenom"]
+        id_player = player["joueur_id"]
+        print(f'[X] {name_player} [X]')
+        result = retrieve_player_statsAce(name_player.replace(" ", "-"), id_player)
+        collection.update_one(
+            {"joueur_id": id_player},
+            {"$set": {"aces_server": result[0], "aces_receiver": result[1]}},
+            upsert=True
+        )
 
     print("*** DONE ALL ***")
 
@@ -234,8 +176,70 @@ def get_name_from_id_mongo(joueur_id: str) -> str | None:
         return joueur["nom_prenom"]
     return None
 
+def build_ladder_receiver(nb_person_ladder=300):
+    collection_ladder_receiver.delete_many({})
+
+    for player in collection.find().limit(nb_person_ladder):
+        aces_receiver = player.get("aces_receiver", [])
+        if not aces_receiver:
+            continue
+
+        avg_aces_receiver = sum(aces_receiver) / len(aces_receiver)
+        collection_ladder_receiver.insert_one({
+            "nom_prenom": player["nom_prenom"],
+            "joueur_id": player["joueur_id"],
+            "avg_aces_receiver": avg_aces_receiver,
+        })
+
+    sorted_players = list(collection_ladder_receiver.find().sort("avg_aces_receiver", -1).limit(nb_person_ladder))
+
+    collection_ladder_receiver.delete_many({})
+    for index, player in enumerate(sorted_players, start=1):
+        collection_ladder_receiver.insert_one({
+            "nom_prenom": player["nom_prenom"],
+            "joueur_id": player["joueur_id"],
+            "avg_aces_receiver": player["avg_aces_receiver"],
+            "rank": index
+        })
+
+    print("Ladder receiver mis à jour et trié.")
+
+
+def build_ladder_server(nb_person_ladder=300):
+    collection_ladder_server.delete_many({})
+
+    for player in collection.find().limit(nb_person_ladder):
+        aces_server = player.get("aces_server", [])
+        if not aces_server:
+            continue
+
+        avg_aces_server = sum(aces_server) / len(aces_server)
+
+        collection_ladder_server.insert_one({
+            "nom_prenom": player["nom_prenom"],
+            "joueur_id": player["joueur_id"],
+            "avg_aces_server": avg_aces_server,
+        })
+
+    sorted_players = list(collection_ladder_server.find().sort("avg_aces_server", -1).limit(nb_person_ladder))
+
+    collection_ladder_server.delete_many({})
+    for index, player in enumerate(sorted_players, start=1):
+        collection_ladder_server.insert_one({
+            "nom_prenom": player["nom_prenom"],
+            "joueur_id": player["joueur_id"],
+            "avg_aces_server": player["avg_aces_server"],
+            "rank": index
+        })
+
+    print("Ladder server mis à jour et trié.")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Process some integers.')
     parser.add_argument('--size', type=int, help='The ladder length to build')
     args = parser.parse_args()
-    build_ladders_wta(args.size)
+    update_player_db_stats(args.size)
+    build_ladder_server(args.size)
+    build_ladder_receiver(args.size)
+    
